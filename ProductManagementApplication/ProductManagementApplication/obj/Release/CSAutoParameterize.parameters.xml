@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=DEVELOPERS-2019;Initial Catalog=ProductManagementSecurity;User ID=sa;Password=Aegth " tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Yitty\ Source\ Code\ Repo\\ProductManagementV2\\ProductManagementApplication\\ProductManagementApplication\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="MembershipDbContext-Web.config Connection String" description="MembershipDbContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=DEVELOPERS-2019;Initial Catalog=ProductManagementSecurity;User ID=sa;Password=Aegth " tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Yitty\ Source\ Code\ Repo\\ProductManagementV2\\ProductManagementApplication\\ProductManagementApplication\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MembershipDbContext']/@connectionString" />
+  </parameter>
+  <parameter name="ProductManagementEntities-Web.config Connection String" description="ProductManagementEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/ProductManagementDB.csdl|res://*/ProductManagementDB.ssdl|res://*/ProductManagementDB.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=Developers-2019;initial catalog=ProductManagement;persist security info=True;user id=sa;password=Aegth;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Yitty\ Source\ Code\ Repo\\ProductManagementV2\\ProductManagementApplication\\ProductManagementApplication\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ProductManagementEntities']/@connectionString" />
+  </parameter>
+  <parameter name="sample999Entities-Web.config Connection String" description="sample999Entities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/AccountMateDemo.csdl|res://*/AccountMateDemo.ssdl|res://*/AccountMateDemo.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=ACCOUNTMATE;initial catalog=sample999;persist security info=True;user id=sa;password=Aegth;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Yitty\ Source\ Code\ Repo\\ProductManagementV2\\ProductManagementApplication\\ProductManagementApplication\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='sample999Entities']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProductManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Color">
+    <Key>
+      <PropertyRef Name="ColorId" />
+    </Key>
+    <Property Name="ColorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ColorDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ColorCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="IsVoided" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Flavor">
+    <Key>
+      <PropertyRef Name="FlavorId" />
+    </Key>
+    <Property Name="FlavorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FlavorDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FlavorCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="IsVoided" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="GenderId" />
+    </Key>
+    <Property Name="GenderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GenderDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GenderCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="IsVoided" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Orientation">
+    <Key>
+      <PropertyRef Name="OrientationId" />
+    </Key>
+    <Property Name="OrientationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrientationDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="OrientationCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="IsVoided" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Packaging">
+    <Key>
+      <PropertyRef Name="PackagingId" />
+    </Key>
+    <Property Name="PackagingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PackagingDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PackagingCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="IsVoided" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Size">
+    <Key>
+      <PropertyRef Name="SizeId" />
+    </Key>
+    <Property Name="SizeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SizeDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SizeTitleId" Type="Int32" />
+    <Property Name="SizeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SizeTitle" Relationship="Self.FK_Size_SizeTitle" FromRole="Size" ToRole="SizeTitle" />
+    <Property Name="IsVoided" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="SizeTitle">
+    <Key>
+      <PropertyRef Name="SizeTitleId" />
+    </Key>
+    <Property Name="SizeTitleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SizeTitleDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Sizes" Relationship="Self.FK_Size_SizeTitle" FromRole="SizeTitle" ToRole="Size" />
+    <Property Name="IsVoided" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Strength">
+    <Key>
+      <PropertyRef Name="StrengthId" />
+    </Key>
+    <Property Name="StrengthId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StrengthDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="StrengthCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="IsVoided" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="SupplierId" />
+    </Key>
+    <Property Name="SupplierId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SupplierDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IsVoided" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="UnitOfMeasure">
+    <Key>
+      <PropertyRef Name="UnitOfMeasureId" />
+    </Key>
+    <Property Name="UnitOfMeasureId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UnitOfMeasureDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UnitOfMeasureCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="IsVoided" Type="Boolean" />
+    <Property Name="Factor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BaseCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_Size_SizeTitle">
+    <End Role="SizeTitle" Type="Self.SizeTitle" Multiplicity="0..1" />
+    <End Role="Size" Type="Self.Size" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SizeTitle">
+        <PropertyRef Name="SizeTitleId" />
+      </Principal>
+      <Dependent Role="Size">
+        <PropertyRef Name="SizeTitleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProductManagementEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Colors" EntityType="Self.Color" />
+    <EntitySet Name="Flavors" EntityType="Self.Flavor" />
+    <EntitySet Name="Genders" EntityType="Self.Gender" />
+    <EntitySet Name="Orientations" EntityType="Self.Orientation" />
+    <EntitySet Name="Packagings" EntityType="Self.Packaging" />
+    <EntitySet Name="Sizes" EntityType="Self.Size" />
+    <EntitySet Name="SizeTitles" EntityType="Self.SizeTitle" />
+    <EntitySet Name="Strengths" EntityType="Self.Strength" />
+    <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="UnitOfMeasures" EntityType="Self.UnitOfMeasure" />
+    <AssociationSet Name="FK_Size_SizeTitle" Association="Self.FK_Size_SizeTitle">
+      <End Role="SizeTitle" EntitySet="SizeTitles" />
+      <End Role="Size" EntitySet="Sizes" />
+    </AssociationSet>
+    <EntitySet Name="UnitOfMeasureCategories" EntityType="ProductManagementModel.UnitOfMeasureCategory" />
+    <EntitySet Name="UOMBases" EntityType="ProductManagementModel.UOMBase" />
+    <EntitySet Name="Products" EntityType="ProductManagementModel.Product" />
+    <AssociationSet Name="FK_Product_UnitOfMeasureCategory" Association="ProductManagementModel.FK_Product_UnitOfMeasureCategory">
+      <End Role="UnitOfMeasureCategory" EntitySet="UnitOfMeasureCategories" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_UnitOfMeasureCategory1" Association="ProductManagementModel.FK_Product_UnitOfMeasureCategory1">
+      <End Role="UnitOfMeasureCategory" EntitySet="UnitOfMeasureCategories" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_UnitOfMeasureCategory2" Association="ProductManagementModel.FK_Product_UnitOfMeasureCategory2">
+      <End Role="UnitOfMeasureCategory" EntitySet="UnitOfMeasureCategories" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_UnitOfMeasureCategory3" Association="ProductManagementModel.FK_Product_UnitOfMeasureCategory3">
+      <End Role="UnitOfMeasureCategory" EntitySet="UnitOfMeasureCategories" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <EntitySet Name="SystemErrorLogs" EntityType="ProductManagementModel.SystemErrorLog" />
+    <EntitySet Name="Brands" EntityType="ProductManagementModel.Brand" />
+    <AssociationSet Name="FK_Product_Brand" Association="ProductManagementModel.FK_Product_Brand">
+      <End Role="Brand" EntitySet="Brands" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <EntitySet Name="ClassHierarchies" EntityType="ProductManagementModel.ClassHierarchy" />
+    <EntitySet Name="Vendors" EntityType="ProductManagementModel.Vendor" />
+    <EntitySet Name="ProductMappings" EntityType="ProductManagementModel.ProductMapping" />
+    <EntitySet Name="Other" EntityType="ProductManagementModel.Other" />
+  </EntityContainer>
+  <EntityType Name="UnitOfMeasureCategory">
+    <Key>
+      <PropertyRef Name="UOMCategoryId" />
+    </Key>
+    <Property Name="UOMCategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UOMDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UOMCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsVoided" Type="Boolean" />
+    <NavigationProperty Name="Products" Relationship="ProductManagementModel.FK_Product_UnitOfMeasureCategory" FromRole="UnitOfMeasureCategory" ToRole="Product" />
+    <NavigationProperty Name="Products1" Relationship="ProductManagementModel.FK_Product_UnitOfMeasureCategory1" FromRole="UnitOfMeasureCategory" ToRole="Product" />
+    <NavigationProperty Name="Products2" Relationship="ProductManagementModel.FK_Product_UnitOfMeasureCategory2" FromRole="UnitOfMeasureCategory" ToRole="Product" />
+    <NavigationProperty Name="Products3" Relationship="ProductManagementModel.FK_Product_UnitOfMeasureCategory3" FromRole="UnitOfMeasureCategory" ToRole="Product" />
+    <Property Name="UOMType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UOMBase">
+    <Key>
+      <PropertyRef Name="UOMBaseId" />
+    </Key>
+    <Property Name="UOMBaseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UOMBase1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UOMBaseCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductSku" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="ProductIdPrefix" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ProductBaseDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ProductDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="SupplierId" Type="Int32" />
+    <Property Name="Brand" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TypeId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="VendorId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Cost" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="Weight" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="WeightUOMId" Type="Int32" />
+    <Property Name="Length" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="LengthUOMId" Type="Int32" />
+    <Property Name="Width" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="WidthUOMId" Type="Int32" />
+    <Property Name="Height" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="HeightUOMId" Type="Int32" />
+    <Property Name="UnitOfMeasureId" Type="Int32" />
+    <Property Name="IsOneTimeProduct" Type="Boolean" />
+    <Property Name="IsApproved" Type="Boolean" />
+    <Property Name="IsVoided" Type="Boolean" />
+    <Property Name="DateTimeCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="UnitOfMeasureCategory" Relationship="ProductManagementModel.FK_Product_UnitOfMeasureCategory" FromRole="Product" ToRole="UnitOfMeasureCategory" />
+    <NavigationProperty Name="UnitOfMeasureCategory1" Relationship="ProductManagementModel.FK_Product_UnitOfMeasureCategory1" FromRole="Product" ToRole="UnitOfMeasureCategory" />
+    <NavigationProperty Name="UnitOfMeasureCategory2" Relationship="ProductManagementModel.FK_Product_UnitOfMeasureCategory2" FromRole="Product" ToRole="UnitOfMeasureCategory" />
+    <NavigationProperty Name="UnitOfMeasureCategory3" Relationship="ProductManagementModel.FK_Product_UnitOfMeasureCategory3" FromRole="Product" ToRole="UnitOfMeasureCategory" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DisapprovalReason" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="BrandId" Type="Int64" />
+    <NavigationProperty Name="Brand1" Relationship="ProductManagementModel.FK_Product_Brand" FromRole="Product" ToRole="Brand" />
+    <Property Name="NoUPCFound" Type="Boolean" />
+    <Property Name="ClassId1" Type="Int64" />
+    <Property Name="ClassId2" Type="Int64" />
+    <Property Name="ClassId3" Type="Int64" />
+    <Property Name="IsSuitableChannels" Type="Boolean" />
+    <Property Name="IsSuitableWeb" Type="Boolean" />
+    <Property Name="DateTimeUpdated" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="VendorPartNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_Product_UnitOfMeasureCategory">
+    <End Type="ProductManagementModel.UnitOfMeasureCategory" Role="UnitOfMeasureCategory" Multiplicity="0..1" />
+    <End Type="ProductManagementModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitOfMeasureCategory">
+        <PropertyRef Name="UOMCategoryId" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="WeightUOMId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_UnitOfMeasureCategory1">
+    <End Type="ProductManagementModel.UnitOfMeasureCategory" Role="UnitOfMeasureCategory" Multiplicity="0..1" />
+    <End Type="ProductManagementModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitOfMeasureCategory">
+        <PropertyRef Name="UOMCategoryId" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="LengthUOMId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_UnitOfMeasureCategory2">
+    <End Type="ProductManagementModel.UnitOfMeasureCategory" Role="UnitOfMeasureCategory" Multiplicity="0..1" />
+    <End Type="ProductManagementModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitOfMeasureCategory">
+        <PropertyRef Name="UOMCategoryId" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="WidthUOMId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_UnitOfMeasureCategory3">
+    <End Type="ProductManagementModel.UnitOfMeasureCategory" Role="UnitOfMeasureCategory" Multiplicity="0..1" />
+    <End Type="ProductManagementModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitOfMeasureCategory">
+        <PropertyRef Name="UOMCategoryId" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="HeightUOMId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SystemErrorLog">
+    <Key>
+      <PropertyRef Name="SystemErrorLogId" />
+    </Key>
+    <Property Name="SystemErrorLogId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Module" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Method" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ErrorMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SystemUser" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="LogDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="BrandId" />
+    </Key>
+    <Property Name="BrandId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BrandDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IsVoided" Type="Boolean" />
+    <NavigationProperty Name="Products" Relationship="ProductManagementModel.FK_Product_Brand" FromRole="Brand" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_Product_Brand">
+    <End Type="ProductManagementModel.Brand" Role="Brand" Multiplicity="0..1" />
+    <End Type="ProductManagementModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand">
+        <PropertyRef Name="BrandId" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="BrandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ClassHierarchy">
+    <Key>
+      <PropertyRef Name="ClassHierarchyId" />
+    </Key>
+    <Property Name="ClassHierarchyId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClassHierarchyRevNo" Type="Int32" />
+    <Property Name="Level1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Level2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Level3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Level4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Meta" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Path" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IsVoided" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Vendor">
+    <Key>
+      <PropertyRef Name="VendorId" />
+    </Key>
+    <Property Name="VendorId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VendorNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName2" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="IsVoid" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ProductMapping">
+    <Key>
+      <PropertyRef Name="ProductMappingId" />
+    </Key>
+    <Property Name="ProductMappingId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OldProductId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NewProductId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Other">
+    <Key>
+      <PropertyRef Name="OtherId" />
+    </Key>
+    <Property Name="OtherId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OtherDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="OtherCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="IsVoided" Type="Boolean" />
+  </EntityType>
+</Schema>

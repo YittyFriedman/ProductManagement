@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br /><br />
+<legend>Login</legend>
+<form method="post" action="/Account/Login">
+
+    <table cellpadding="3">
+
+        <tr>
+
+            <td>Email&nbsp;</td>
+
+            <td>
+
+                <input type="text" class="form-control" name="UserName" />
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td style="padding-top:20px">Password&nbsp;</td>
+
+            <td style="padding-top:20px">
+
+                <input type="password" class="form-control" name="Password" />
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td colspan="2" align="right">
+                <br />
+                <input type="submit" class="btn btn-primary" value="Login">
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td> <a href="Register">New user?</a></td>
+        </tr>
+        <tr>
+
+            <td> <a href="ResetPassword">Forgot password?</a></td>
+        </tr>
+
+    </table>
+
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+    </script>
+}  

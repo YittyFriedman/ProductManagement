@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b31b1521b4bf4b02ab572efc6b118b61" Name="Diagram1">
+        <EntityTypeShape EntityType="ProductManagementModel.Color" Width="1.5" PointX="5.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.Flavor" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.Gender" Width="1.5" PointX="2.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.Orientation" Width="1.5" PointX="4.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.Packaging" Width="1.5" PointX="6.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.Size" Width="1.5" PointX="8" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.SizeTitle" Width="1.5" PointX="5.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.Strength" Width="1.5" PointX="7.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.Supplier" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.sysdiagram" Width="1.5" PointX="8.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.UnitOfMeasure" Width="1.5" PointX="0.75" PointY="11.125" IsExpanded="true" />
+        <AssociationConnector Association="ProductManagementModel.FK_Size_SizeTitle" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ProductManagementModel.ProductClass" Width="1.5" PointX="10.375" PointY="0.875" />
+        <EntityTypeShape EntityType="ProductManagementModel.UOMBase" Width="1.5" PointX="10.375" PointY="3.75" />
+        <EntityTypeShape EntityType="ProductManagementModel.Product" Width="1.5" PointX="3" PointY="1" />
+        <AssociationConnector Association="ProductManagementModel.FK_Product_ProductClass" />
+        <AssociationConnector Association="ProductManagementModel.FK_Product_Supplier" />
+        <EntityTypeShape EntityType="ProductManagementModel.SystemErrorLog" Width="1.5" PointX="3.375" PointY="10.75" />
+        <EntityTypeShape EntityType="ProductManagementModel.Brand" Width="1.5" PointX="5.375" PointY="10.875" />
+        <AssociationConnector Association="ProductManagementModel.FK_Product_Brand" />
+        <EntityTypeShape EntityType="ProductManagementModel.ClassHierarchy" Width="1.5" PointX="11.375" PointY="7" />
+        <AssociationConnector Association="ProductManagementModel.FK_Product_ClassHierarchy" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,280 @@
+﻿
+<div id="productDetails" >
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-11">
+            <h4><span id="spnPrdSku"></span><span id="spnPrdDesc"></span></h4>
+        </div>
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-4"> <label class="col-form-label">Associated Product</label></div>
+        <div style="margin-top:20px" class="col-sm-5 ">
+            <span id="spnAssProduct"></span>
+        </div>
+
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-4">
+            <label class="col-form-label">Manufacturer</label>
+        </div>
+        <div style="margin-top:20px" class="col-sm-5 ">
+            <div class=" editDiv" id="divEditManufacturer">
+                <div id="divSupplier">
+                    <div class="dropdown">
+                        <button class="form-control dropdown-toggle" type="button" id="ddmBtnSupplier" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="lblSupplier" class="spanOverflow spnLabel">Select one</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-regular" id="ddmSupplier" aria-labelledby="dropdownMenuButton">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-4"> <label class="col-form-label">Brand</label></div>
+        <div style="margin-top:20px" class="col-sm-5 ">
+            <div class="editDiv" id="divEditBrand">
+                <div id="divBrand">
+                    <input type="text" style="text-align:center" class="form-control txtBrandEdit" id="txtBrandEdit" />
+
+                </div>
+            </div>
+        </div>
+      
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-4"> <label class="col-form-label">Category 1</label></div>
+        <div style="margin-top:20px" class="col-sm-5">
+           <div class=" editDiv" id="divEditCtgry1">
+                <div id="divClass1">
+                    <div class="dropdown">
+                        <button class="form-control dropdown-toggle" type="button" id="ddmBtnClass1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="lblClass1" class="spanOverflow spnLabel">Select one</span>
+                        </button>
+                        <ul class="dropdown-menu" id="ddmClass1" style="min-width: 100%;" aria-labelledby="dropdownMenuButton">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-4"> <label class="col-form-label">Category 2</label></div>
+        <div style="margin-top:20px" class="col-sm-5">
+            <div class=" editDiv" id="divEditCtgry2">
+                <div id="divClass2">
+                    <div class="dropdown">
+                        <button class="form-control dropdown-toggle" type="button" id="ddmBtnClass2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="lblClass2" class="spanOverflow spnLabel">Select one</span>
+                        </button>
+                        <ul class="dropdown-menu" id="ddmClass2" style="min-width: 100%;" aria-labelledby="dropdownMenuButton">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-4"> <label class="col-form-label">Category 3</label></div>
+        <div style="margin-top:20px" class="col-sm-5">
+              <div class=" editDiv" id="divEditCtgry3">
+                <div id="divClass3">
+                    <div class="dropdown">
+                        <button class="form-control dropdown-toggle" type="button" id="ddmBtnClass3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="lblClass3" class="spanOverflow spnLabel">Select one</span>
+                        </button>
+                        <ul class="dropdown-menu" id="ddmClass3" style="min-width: 100%;" aria-labelledby="dropdownMenuButton">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-4"> <label class="col-form-label">Inventory Type</label></div>
+        <div style="margin-top:20px" class="col-sm-5 ">
+            <div class=" editDiv" id="divEditType">
+                <div id="divType">
+                    <div class="dropdown">
+                        <button class="form-control dropdown-toggle" type="button" id="ddmBtnType" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="lblType" class="spanOverflow spnLabel">Select one</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-regular" id="ddmType" aria-labelledby="dropdownMenuButton">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-4"> <label class="col-form-label">UPC</label></div>
+        <div style="margin-top:20px" class="col-sm-6 ">
+            <div class=" editDiv" id="divEditUPC">
+                <div id="divUPC">
+                    <div class="col-sm-7" style="padding-left:0px;padding-right:0px"> <input type="text" class="form-control" id="txtNewUPCEdit" /> </div>
+                    <div class="col-sm-5" style="margin-top:10px">
+                        <span><input type="checkbox" id="ckNoUPCEdit" />&nbsp;No UPC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-4"> <label class="col-form-label">Vendor Id</label></div>
+        <div style="margin-top:20px" class="col-sm-5 ">
+            <div class=" editDiv" id="divEditVendor">
+                <div id="divVendor">
+                    <input type="text" class="form-control txtVendorIdEdit" id="txtVendorIdEdit" value="" />
+                </div>
+            </div>
+        </div>
+       
+    </div>
+
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-4"> <label class="col-form-label">Vendor Part No</label></div>
+        <div style="margin-top:20px" class="col-sm-5">
+            <div class=" editDiv" id="divEditVendorPartNo">
+                <div id="divVendorPartNo">
+                    <input type="text" class="form-control txtVendorPartNo" id="txtVendorPartNo" maxlength="20" value="" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-4"> <label class="col-form-label">Cost</label></div>
+        <div style="margin-top:20px" class="col-sm-5 ">
+              <div class=" editDiv" id="divEditCost">
+                <div id="divCost" class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <input type="number" min="0" style="text-align:right" class="form-control " id="txtCost" value="" />
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-4"> <label class="col-form-label">Weight</label></div>
+        <div style="margin-top:20px" class="col-sm-5 ">
+           <div class=" editDiv" id="divEditWeight">
+                <div id="divWeight" class="input-group">
+                    <input type="number" min="0" class="form-control " style="text-align:right" id="txtWeight" value="" />
+                    <div class="input-group-btn">
+                        <button type="button" class="dropdown-toggle form-control" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="spnUOM spnUOMSelectedWeight" id="spnUOMSelectedWeight">
+                                <span class="caret"></span>
+                            </span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right ddmUOMCategory" id="ddmUOMCategoryWeight" data-productid="Weight" data-uomtype="W" style="text-align:center">
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-4"> <label class="col-form-label">Length</label></div>
+        <div style="margin-top:20px" class="col-sm-5 ">
+            <div class=" editDiv" id="divEditLength">
+                <div id="divLength" class="input-group">
+                    <input type="number" min="0" class="form-control " style="text-align:right" id="txtLength" value="" />
+                    <div class="input-group-btn">
+                        <button type="button" class="dropdown-toggle form-control" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="spnUOM spnUOMSelectedLength" id="spnUOMSelectedLength">
+                                <span class="caret"></span>
+                            </span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right ddmUOMCategory" id="ddmUOMCategoryLength" data-productid="Length" data-uomtype="L" style="text-align:center">
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+      
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-4"> <label class="col-form-label">Width</label></div>
+        <div style="margin-top:20px" class="col-sm-5 ">
+            <div class=" editDiv" id="divEditWidth">
+                <div id="divWidth" class="input-group">
+                    <input type="number" min="0" class="form-control " style="text-align:right" id="txtWidth" value="" />
+                    <div class="input-group-btn">
+                        <button type="button" class="dropdown-toggle form-control" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="spnUOM spnUOMSelectedWidth" id="spnUOMSelectedWidth">
+                                <span class="caret"></span>
+                            </span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right ddmUOMCategory" id="ddmUOMCategoryWidth" data-productid="Width" data-uomtype="L" style="text-align:center">
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-4"> <label class="col-form-label">Height</label></div>
+        <div style="margin-top:20px" class="col-sm-5 ">
+            <div class=" editDiv" id="divEditHeight">
+                <div id="divHeight" class="input-group">
+                    <input type="number" min="0" class="form-control " style="text-align:right" id="txtHeight" value="" />
+                    <div class="input-group-btn">
+                        <button type="button" class="dropdown-toggle form-control" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="spnUOM spnUOMSelectedHeight" id="spnUOMSelectedHeight">
+                                <span class="caret"></span>
+                            </span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right ddmUOMCategory" id="ddmUOMCategoryHeight" data-productid="Height" data-uomtype="L" style="text-align:center">
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:10px" class="col-sm-4"> <label class="col-form-label">One Time Product</label></div>
+        <div style="margin-top:10px" class="col-sm-5 "><span class="spnText"><input type="checkbox" id="ckOneTimePrd" /></span></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:10px" class="col-sm-4"> <label class="col-form-label">Is Suitable for Channels</label></div>
+        <div style="margin-top:10px" class="col-sm-5 "><input type="checkbox" id="ckStChn" class="" /></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:10px" class="col-sm-4"> <label class="col-form-label">Is Suitable for Website</label></div>
+        <div style="margin-top:10px" class="col-sm-5 "><input type="checkbox" class="" id="ckStWeb" /></div>
+
+    </div>
+    
+</div>

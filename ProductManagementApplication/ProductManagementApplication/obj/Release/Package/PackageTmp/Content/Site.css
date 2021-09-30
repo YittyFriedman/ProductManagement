@@ -1,0 +1,246 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+/*body {
+    font-family: Verdana, Arial, helvetica, Geneva, sans-serif;
+    font-size: 12px;
+}
+
+
+table td, table th {
+    font-family: Verdana, Arial, helvetica, Geneva, sans-serif;
+    font-size: 12px;
+}*/
+
+.row-bordered:after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid #ccc;
+   
+}
+
+.modal-dialog-centered{
+    margin-top:10%;
+}
+
+.dropdown-menu-regular {
+    max-height: 155px;
+    overflow-y: auto;
+}
+
+.required:after {
+    content: "*";
+    color: red;
+}
+
+
+.dropdown-container {
+    float: right;
+    height: 60px;
+}
+
+.position-dropdown-controller {
+    /*position: absolute;*/
+    right: 0;
+}
+
+.dropdown-toggle,
+.dropdown-menu-regular {
+    width: 100%;
+    min-width: 0;
+}
+
+
+.dropdown-menu-regular {
+    height: 0;
+    /* text-align: center;*/
+    /*display: block !important;*/
+    /* visibility: hidden;
+    position: relative;*/
+    float: none;
+}
+
+.open .dropdown-menu-regular {
+    /* display: block !important;*/
+    visibility: visible;
+    height: auto;
+}
+
+
+
+#tblApproveProducts tbody tr {
+    display: none;
+    min-height:60px;
+    height: 60px
+}
+.uomDDBtn{
+    width: 100px;
+    text-align:right
+}
+
+ul.bs-autocomplete-menu {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    padding-left:30px;
+    width: 100%;
+    max-height: 200px;
+    overflow: auto;
+   /* z-index: 9999;*/
+    border: 1px solid #eeeeee;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.4);
+}
+
+    ul.bs-autocomplete-menu a {
+        font-weight: normal;
+        color: #333333;
+    }
+
+.ui-helper-hidden-accessible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.ui-state-active,
+.ui-state-focus {
+    color: #ccc;
+    background-color: #eeeeee;
+}
+.ui-menu-item:hover{
+
+    background-color:#ccc
+}
+.bs-autocomplete-feedback {
+    width: 1.5em;
+    height: 1.5em;
+    overflow: hidden;
+    margin-top: .5em;
+    margin-right: .5em;
+}
+.ui-widget {
+    font-family: sans-serif;
+    color: red
+}
+/*.loader {
+    font-size: 10px;
+    text-indent: -9999em;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background: #333;
+    background: -moz-linear-gradient(left, #333333 10%, rgba(255, 255, 255, 0) 42%);
+    background: -webkit-linear-gradient(left, #333333 10%, rgba(255, 255, 255, 0) 42%);
+    background: -o-linear-gradient(left, #333333 10%, rgba(255, 255, 255, 0) 42%);
+    background: -ms-linear-gradient(left, #333333 10%, rgba(255, 255, 255, 0) 42%);
+    background: linear-gradient(to right, #333333 10%, rgba(255, 255, 255, 0) 42%);
+    position: relative;
+    -webkit-animation: load3 1.4s infinite linear;
+    animation: load3 1.4s infinite linear;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+    .loader:before {
+        width: 50%;
+        height: 50%;
+        background: #333;
+        border-radius: 100% 0 0 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+    }
+
+    .loader:after {
+        background: #fff;
+        width: 75%;
+        height: 75%;
+        border-radius: 50%;
+        content: '';
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+@-webkit-keyframes load3 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes load3 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}*/
+
+.dropdown-submenu {
+    position: relative;
+}
+
+    .dropdown-submenu .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -1px;
+       width: 100%;
+    min-width: 100%;
+    }
+
+.spanOverflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: calc(80%);
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.ddmUOMCategory{
+    min-width:100%
+}

@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProductManagementModelStoreContainer" CdmEntityContainer="ProductManagementEntities">
+    <EntitySetMapping Name="Colors">
+      <EntityTypeMapping TypeName="ProductManagementModel.Color">
+        <MappingFragment StoreEntitySet="Color">
+          <ScalarProperty Name="IsVoided" ColumnName="IsVoided" />
+          <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+          <ScalarProperty Name="ColorDescription" ColumnName="ColorDescription" />
+          <ScalarProperty Name="ColorCode" ColumnName="ColorCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Flavors">
+      <EntityTypeMapping TypeName="ProductManagementModel.Flavor">
+        <MappingFragment StoreEntitySet="Flavor">
+          <ScalarProperty Name="IsVoided" ColumnName="IsVoided" />
+          <ScalarProperty Name="FlavorId" ColumnName="FlavorId" />
+          <ScalarProperty Name="FlavorDescription" ColumnName="FlavorDescription" />
+          <ScalarProperty Name="FlavorCode" ColumnName="FlavorCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genders">
+      <EntityTypeMapping TypeName="ProductManagementModel.Gender">
+        <MappingFragment StoreEntitySet="Gender">
+          <ScalarProperty Name="IsVoided" ColumnName="IsVoided" />
+          <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+          <ScalarProperty Name="GenderDescription" ColumnName="GenderDescription" />
+          <ScalarProperty Name="GenderCode" ColumnName="GenderCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orientations">
+      <EntityTypeMapping TypeName="ProductManagementModel.Orientation">
+        <MappingFragment StoreEntitySet="Orientation">
+          <ScalarProperty Name="IsVoided" ColumnName="IsVoided" />
+          <ScalarProperty Name="OrientationId" ColumnName="OrientationId" />
+          <ScalarProperty Name="OrientationDescription" ColumnName="OrientationDescription" />
+          <ScalarProperty Name="OrientationCode" ColumnName="OrientationCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Packagings">
+      <EntityTypeMapping TypeName="ProductManagementModel.Packaging">
+        <MappingFragment StoreEntitySet="Packaging">
+          <ScalarProperty Name="IsVoided" ColumnName="IsVoided" />
+          <ScalarProperty Name="PackagingId" ColumnName="PackagingId" />
+          <ScalarProperty Name="PackagingDescription" ColumnName="PackagingDescription" />
+          <ScalarProperty Name="PackagingCode" ColumnName="PackagingCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sizes">
+      <EntityTypeMapping TypeName="ProductManagementModel.Size">
+        <MappingFragment StoreEntitySet="Size">
+          <ScalarProperty Name="IsVoided" ColumnName="IsVoided" />
+          <ScalarProperty Name="SizeId" ColumnName="SizeId" />
+          <ScalarProperty Name="SizeDescription" ColumnName="SizeDescription" />
+          <ScalarProperty Name="SizeTitleId" ColumnName="SizeTitleId" />
+          <ScalarProperty Name="SizeCode" ColumnName="SizeCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SizeTitles">
+      <EntityTypeMapping TypeName="ProductManagementModel.SizeTitle">
+        <MappingFragment StoreEntitySet="SizeTitle">
+          <ScalarProperty Name="IsVoided" ColumnName="IsVoided" />
+          <ScalarProperty Name="SizeTitleId" ColumnName="SizeTitleId" />
+          <ScalarProperty Name="SizeTitleDescription" ColumnName="SizeTitleDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Strengths">
+      <EntityTypeMapping TypeName="ProductManagementModel.Strength">
+        <MappingFragment StoreEntitySet="Strength">
+          <ScalarProperty Name="IsVoided" ColumnName="IsVoided" />
+          <ScalarProperty Name="StrengthId" ColumnName="StrengthId" />
+          <ScalarProperty Name="StrengthDescription" ColumnName="StrengthDescription" />
+          <ScalarProperty Name="StrengthCode" ColumnName="StrengthCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="ProductManagementModel.Supplier">
+        <MappingFragment StoreEntitySet="Supplier">
+          <ScalarProperty Name="IsVoided" ColumnName="IsVoided" />
+          <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+          <ScalarProperty Name="SupplierDescription" ColumnName="SupplierDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ProductManagementModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnitOfMeasures">
+      <EntityTypeMapping TypeName="ProductManagementModel.UnitOfMeasure">
+        <MappingFragment StoreEntitySet="UnitOfMeasure">
+          <ScalarProperty Name="BaseCode" ColumnName="BaseCode" />
+          <ScalarProperty Name="Factor" ColumnName="Factor" />
+          <ScalarProperty Name="IsVoided" ColumnName="IsVoided" />
+          <ScalarProperty Name="UnitOfMeasureId" ColumnName="UnitOfMeasureId" />
+          <ScalarProperty Name="UnitOfMeasureDescription" ColumnName="UnitOfMeasureDescription" />
+          <ScalarProperty Name="UnitOfMeasureCode" ColumnName="UnitOfMeasureCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductClasses">
+      <EntityTypeMapping TypeName="ProductManagementModel.ProductClass">
+        <MappingFragment StoreEntitySet="ProductClass">
+          <ScalarProperty Name="IsVoided" ColumnName="IsVoided" />
+          <ScalarProperty Name="ClassCode" ColumnName="ClassCode" />
+          <ScalarProperty Name="ClassDescription" ColumnName="ClassDescription" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnitOfMeasureCategories">
+      <EntityTypeMapping TypeName="ProductManagementModel.UnitOfMeasureCategory">
+        <MappingFragment StoreEntitySet="UnitOfMeasureCategory">
+          <ScalarProperty Name="IsVoided" ColumnName="IsVoided" />
+          <ScalarProperty Name="UOMCode" ColumnName="UOMCode" />
+          <ScalarProperty Name="UOMDescription" ColumnName="UOMDescription" />
+          <ScalarProperty Name="UOMCategoryId" ColumnName="UOMCategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UOMBases">
+      <EntityTypeMapping TypeName="ProductManagementModel.UOMBase">
+        <MappingFragment StoreEntitySet="UOMBase">
+          <ScalarProperty Name="UOMBaseCode" ColumnName="UOMBaseCode" />
+          <ScalarProperty Name="UOMBase1" ColumnName="UOMBase" />
+          <ScalarProperty Name="UOMBaseId" ColumnName="UOMBaseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="ProductManagementModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateTimeCreated" ColumnName="DateTimeCreated" />
+          <ScalarProperty Name="IsVoided" ColumnName="IsVoided" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="IsOneTimeProduct" ColumnName="IsOneTimeProduct" />
+          <ScalarProperty Name="UnitOfMeasureId" ColumnName="UnitOfMeasureId" />
+          <ScalarProperty Name="HeightUOMId" ColumnName="HeightUOMId" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="WidthUOMId" ColumnName="WidthUOMId" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="LengthUOMId" ColumnName="LengthUOMId" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="WeightUOMId" ColumnName="WeightUOMId" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+          <ScalarProperty Name="UPC" ColumnName="UPC" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+          <ScalarProperty Name="ProductBaseDescription" ColumnName="ProductBaseDescription" />
+          <ScalarProperty Name="ProductIdPrefix" ColumnName="ProductIdPrefix" />
+          <ScalarProperty Name="ProductSku" ColumnName="ProductSku" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemErrorLogs">
+      <EntityTypeMapping TypeName="ProductManagementModel.SystemErrorLog">
+        <MappingFragment StoreEntitySet="SystemErrorLog">
+          <ScalarProperty Name="LogDateTime" ColumnName="LogDateTime" />
+          <ScalarProperty Name="SystemUser" ColumnName="SystemUser" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="Method" ColumnName="Method" />
+          <ScalarProperty Name="Module" ColumnName="Module" />
+          <ScalarProperty Name="SystemErrorLogId" ColumnName="SystemErrorLogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

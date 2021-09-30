@@ -1,0 +1,364 @@
+﻿
+<div id="productDetails" hidden>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-8">
+            <h4><span id="spnPrdSku"></span><span id="spnPrdDesc"></span></h4>
+        </div>
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-3"> <label class="col-form-label">Associated Product</label></div>
+        <div style="margin-top:20px" class="col-sm-3 ">
+            <span id="spnAssProduct"></span>
+        </div>
+
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-3">
+            <label class="col-form-label">Manufacturer</label>
+        </div>
+        <div style="margin-top:20px" class="col-sm-3 ">
+            @*<span class="spnText showInit" id="spnManufacturer"></span>*@
+            @*<button class="btn-link addNew hideInit" id="btnAddNewManufacturer">Add New</button>*@
+            <div class=" editDiv" id="divEditManufacturer">
+                <div id="divSupplier">
+                    <div class="dropdown">
+                        <button class="form-control dropdown-toggle" type="button" id="ddmBtnSupplier" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="lblSupplier" class="spanOverflow spnLabel">Select one</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-regular" id="ddmSupplier" aria-labelledby="dropdownMenuButton">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*<div style="margin-top:20px" class="col-sm-1">
+                <span id="spnManfEditClose" style="cursor:pointer" class=" closeInput hideInit">
+                    <span>&#10005</span>
+                </span>
+            </div>*@
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-3"> <label class="col-form-label">Brand</label></div>
+        <div style="margin-top:20px" class="col-sm-3 ">
+            @*<span class="spnText showInit" id="spnBrand"></span>
+                <button class="btn-link addNew hideInit" id="btnAddNewBrand">Add New</button>*@
+            <div class="editDiv" id="divEditBrand">
+                <div id="divBrand">
+                    <input type="text" style="text-align:center" class="form-control" id="txtBrand" />
+
+                </div>
+            </div>
+        </div>
+        @*<div style="margin-top:30px" class="col-sm-1">
+                <span id="spnBrandEditClose" style="cursor:pointer" class=" closeInput hideInit">
+                    <span>&#10005</span>
+                </span>
+            </div>*@
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-3"> <label class="col-form-label">Category 1</label></div>
+        <div style="margin-top:20px" class="col-sm-3">
+            @*<span id="spnCtgry1" class="spnText showInit"></span>
+                <button class="btn-link addNew hideInit" id="btnAddNewCategory1">Add New</button>*@
+            <div class=" editDiv" id="divEditCtgry1">
+                <div id="divClass1">
+                    <div class="dropdown">
+                        <button class="form-control dropdown-toggle" type="button" id="ddmBtnClass1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="lblClass1" class="spanOverflow spnLabel">Select one</span>
+                        </button>
+                        <ul class="dropdown-menu" id="ddmClass1" style="min-width: 100%;" aria-labelledby="dropdownMenuButton">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*<div style="margin-top:30px" class="col-sm-1">
+                <span id="spnCtgry1EditClose" style="cursor:pointer" class=" closeInput hideInit">
+                    <span>&#10005</span>
+                </span>
+            </div>*@
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-3"> <label class="col-form-label">Category 2</label></div>
+        <div style="margin-top:20px" class="col-sm-3">
+            @*<span id="spnCtgry2" class="spnText showInit"></span>*@
+            <button class="btn-link addNew hideInit" id="btnAddNewCategory2">Add New</button>
+            <div class=" editDiv" id="divEditCtgry2">
+                <div id="divClass2">
+                    <div class="dropdown">
+                        <button class="form-control dropdown-toggle" type="button" id="ddmBtnClass2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="lblClass2" class="spanOverflow spnLabel">Select one</span>
+                        </button>
+                        <ul class="dropdown-menu" id="ddmClass2" style="min-width: 100%;" aria-labelledby="dropdownMenuButton">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*<div style="margin-top:30px" class="col-sm-1">
+                <span id="spnCtgry2EditClose" style="cursor:pointer" class=" closeInput hideInit">
+                    <span>&#10005</span>
+                </span>
+            </div>*@
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-3"> <label class="col-form-label">Category 3</label></div>
+        <div style="margin-top:20px" class="col-sm-3">
+            @*<span id="spnCtgry3" class="spnText showInit"></span>
+                <button class="btn-link addNew hideInit" id="btnAddNewCategory3">Add New</button>*@
+            <div class=" editDiv" id="divEditCtgry3">
+                <div id="divClass3">
+                    <div class="dropdown">
+                        <button class="form-control dropdown-toggle" type="button" id="ddmBtnClass3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="lblClass3" class="spanOverflow spnLabel">Select one</span>
+                        </button>
+                        <ul class="dropdown-menu" id="ddmClass3" style="min-width: 100%;" aria-labelledby="dropdownMenuButton">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*<div style="margin-top:30px" class="col-sm-1">
+                <span id="spnCtgry3EditClose" style="cursor:pointer" class=" closeInput hideInit">
+                    <span>&#10005</span>
+                </span>
+            </div>*@
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-3"> <label class="col-form-label">Inventory Type</label></div>
+        <div style="margin-top:20px" class="col-sm-3 ">
+            @*<span class="spnText showInit" id="spnType"></span>
+                <button class="btn-link addNew hideInit" id="btnAddNewType">Add New</button>*@
+            <div class=" editDiv" id="divEditType">
+                <div id="divType">
+                    <div class="dropdown">
+                        <button class="form-control dropdown-toggle" type="button" id="ddmBtnType" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="lblType" class="spanOverflow spnLabel">Select one</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-regular" id="ddmType" aria-labelledby="dropdownMenuButton">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*<div style="margin-top:30px" class="col-sm-1">
+                <span id="spnTypeEditClose" style="cursor:pointer" class=" closeInput hideInit">
+                    <span>&#10005</span>
+                </span>
+            </div>*@
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-3"> <label class="col-form-label">UPC</label></div>
+        <div style="margin-top:20px" class="col-sm-3 ">
+            @*<span class="spnText showInit" id="spnUPC"></span>
+                <button class="btn-link addNew hideInit" id="btnAddNewUPC">Add New</button>*@
+            <div class=" editDiv" id="divEditUPC">
+                <div id="divUPC">
+                    <div class="col-sm-7" style="padding-left:0px;padding-right:0px"> <input type="text" class="form-control" id="txtNewUPC" /> </div>
+                    <div class="col-sm-5" style="margin-top:10px">
+                        <span><input type="checkbox" id="ckNoUPC" />&nbsp;No UPC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*<div style="margin-top:30px" class="col-sm-1">
+                <span id="spnUPCEditClose" style="cursor:pointer" class=" closeInput hideInit">
+                    <span>&#10005</span>
+                </span>
+            </div>*@
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-3"> <label class="col-form-label">Vendor Id</label></div>
+        <div style="margin-top:20px" class="col-sm-3 ">
+            @*<span class="spnText showInit" id="spnVendor"></span>
+                <button class="btn-link addNew hideInit" id="btnAddNewVendor">Add New</button>*@
+            <div class=" editDiv" id="divEditVendor">
+                <div id="divVendor">
+                    <input type="text" class="form-control txtVendorId" id="txtVendorId" value="" />
+                </div>
+            </div>
+        </div>
+        @*<div style="margin-top:30px" class="col-sm-1">
+                <span id="spnVendorEditClose" style="cursor:pointer" class=" closeInput hideInit">
+                    <span>&#10005</span>
+                </span>
+            </div>*@
+    </div>
+
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-3"> <label class="col-form-label">Vendor Part No</label></div>
+        <div style="margin-top:20px" class="col-sm-3 ">
+            <div class=" editDiv" id="divEditVendorPartNo">
+                <div id="divVendorPartNo">
+                    <input type="text" class="form-control txtVendorPartNo" id="txtVendorPartNo" maxlength="20" value="" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-3"> <label class="col-form-label">Cost</label></div>
+        <div style="margin-top:20px" class="col-sm-3 ">
+            @*<span class="spnText showInit" id="spnCost"></span>
+                <button class="btn-link addNew hideInit" id="btnAddNewCost">Add New</button>*@
+            <div class=" editDiv" id="divEditCost">
+                <div id="divCost" class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <input type="number" min="0" style="text-align:right" class="form-control " id="txtCost" value="" />
+                </div>
+            </div>
+        </div>
+        @*<div style="margin-top:30px" class="col-sm-1">
+                <span id="spnCostEditClose" style="cursor:pointer" class=" closeInput hideInit">
+                    <span>&#10005</span>
+                </span>
+            </div>*@
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-3"> <label class="col-form-label">Weight</label></div>
+        <div style="margin-top:20px" class="col-sm-3 ">
+            @*<span class="spnText showInit" id="spnWeight"></span>
+                <button class="btn-link addNew hideInit" id="btnAddNewWeight">Add New</button>*@
+            <div class=" editDiv" id="divEditWeight">
+                <div id="divWeight" class="input-group">
+                    <input type="number" min="0" class="form-control " style="text-align:right" id="txtWeight" value="" />
+                    <div class="input-group-btn">
+                        <button type="button" class="dropdown-toggle form-control" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="spnUOM spnUOMSelectedWeight" id="spnUOMSelectedWeight">
+                                <span class="caret"></span>
+                            </span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right ddmUOMCategory" id="ddmUOMCategoryWeight" data-productid="Weight" data-uomtype="W" style="text-align:center">
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        @*<div style="margin-top:30px" class="col-sm-1">
+                <span id="spnWeightEditClose" style="cursor:pointer" class=" closeInput hideInit">
+                    <span>&#10005</span>
+                </span>
+            </div>*@
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-3"> <label class="col-form-label">Length</label></div>
+        <div style="margin-top:20px" class="col-sm-3 ">
+            @*<span class="spnText showInit" id="spnLength"></span>
+                <button class="btn-link addNew hideInit" id="btnAddNewLength">Add New</button>*@
+            <div class=" editDiv" id="divEditLength">
+                <div id="divLength" class="input-group">
+                    <input type="number" min="0" class="form-control " style="text-align:right" id="txtLength" value="" />
+                    <div class="input-group-btn">
+                        <button type="button" class="dropdown-toggle form-control" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="spnUOM spnUOMSelectedLength" id="spnUOMSelectedLength">
+                                <span class="caret"></span>
+                            </span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right ddmUOMCategory" id="ddmUOMCategoryLength" data-productid="Length" data-uomtype="L" style="text-align:center">
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        @*<div style="margin-top:30px" class="col-sm-1">
+                <span id="spnLengthEditClose" style="cursor:pointer" class=" closeInput hideInit">
+                    <span>&#10005</span>
+                </span>
+            </div>*@
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-3"> <label class="col-form-label">Width</label></div>
+        <div style="margin-top:20px" class="col-sm-3 ">
+            @*<span class="spnText showInit" id="spnWidth"></span>
+                <button class="btn-link addNew hideInit" id="btnAddNewWidth">Add New</button>*@
+            <div class=" editDiv" id="divEditWidth">
+                <div id="divWidth" class="input-group">
+                    <input type="number" min="0" class="form-control " style="text-align:right" id="txtWidth" value="" />
+                    <div class="input-group-btn">
+                        <button type="button" class="dropdown-toggle form-control" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="spnUOM spnUOMSelectedWidth" id="spnUOMSelectedWidth">
+                                <span class="caret"></span>
+                            </span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right ddmUOMCategory" id="ddmUOMCategoryWidth" data-productid="Width" data-uomtype="L" style="text-align:center">
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        @*<div style="margin-top:30px" class="col-sm-1">
+                <span id="spnWidthEditClose" style="cursor:pointer" class=" closeInput hideInit">
+                    <span>&#10005</span>
+                </span>
+            </div>*@
+    </div>
+    <div class="row divRowParent">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:20px" class="col-sm-3"> <label class="col-form-label">Height</label></div>
+        <div style="margin-top:20px" class="col-sm-3 ">
+            @*<span class="spnText showInit" id="spnHeight"></span>
+                <button class="btn-link addNew hideInit" id="btnAddNewHeight">Add New</button>*@
+            <div class=" editDiv" id="divEditHeight">
+                <div id="divHeight" class="input-group">
+                    <input type="number" min="0" class="form-control " style="text-align:right" id="txtHeight" value="" />
+                    <div class="input-group-btn">
+                        <button type="button" class="dropdown-toggle form-control" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="spnUOM spnUOMSelectedHeight" id="spnUOMSelectedHeight">
+                                <span class="caret"></span>
+                            </span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right ddmUOMCategory" id="ddmUOMCategoryHeight" data-productid="Height" data-uomtype="L" style="text-align:center">
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        @*<div style="margin-top:30px" class="col-sm-1">
+                <span id="spnHeightEditClose" style="cursor:pointer" class=" closeInput hideInit">
+                    <span>&#10005</span>
+                </span>
+            </div>*@
+    </div>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:10px" class="col-sm-3"> <label class="col-form-label">One Time Product</label></div>
+        <div style="margin-top:10px" class="col-sm-3 "><span class="spnText"><input type="checkbox" id="ckOneTimePrd" /></span></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:10px" class="col-sm-3"> <label class="col-form-label">Is Suitable for Channels</label></div>
+        <div style="margin-top:10px" class="col-sm-3 "><input type="checkbox" id="ckStChn" class="" /></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:10px" class="col-sm-3"> <label class="col-form-label">Is Suitable for Website</label></div>
+        <div style="margin-top:10px" class="col-sm-3 "><input type="checkbox" class="" id="ckStWeb" /></div>
+
+    </div>
+    <br /><br /> <div class="row " hidden id="divSaveChanges">
+        <div class="col-sm-1"></div>
+        <div style="margin-top:30px" class="col-sm-7">
+            <button class="btn btn-primary" type="submit" id="btnSaveChanges">Save Product Changes</button>
+        </div>
+    </div><br />
+</div>

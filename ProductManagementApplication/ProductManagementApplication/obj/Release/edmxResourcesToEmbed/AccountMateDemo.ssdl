@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sample999Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="icitem">
+    <Key>
+      <PropertyRef Name="citemno" />
+    </Key>
+    <Property Name="citemno" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="cdescript" Type="char" MaxLength="54" Nullable="false" />
+    <Property Name="cfdescript" Type="char" MaxLength="54" Nullable="false" />
+    <Property Name="ctype" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cspectype1" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cspectype2" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cbarcode1" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="cbarcode2" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="cstatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="cmeasure" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="csmeasure" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cpmeasure" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cclass" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cprodline" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="ccommiss" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cvendno" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cminptype" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="cbuyer" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="ctaxcode" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="dcreate" Type="datetime" Nullable="false" />
+    <Property Name="dlastsale" Type="datetime" />
+    <Property Name="dlastfnh" Type="datetime" />
+    <Property Name="dspstart" Type="datetime" />
+    <Property Name="dspend" Type="datetime" />
+    <Property Name="tmodified" Type="datetime" />
+    <Property Name="lusespec" Type="smallint" Nullable="false" />
+    <Property Name="laritem" Type="smallint" Nullable="false" />
+    <Property Name="lpoitem" Type="smallint" Nullable="false" />
+    <Property Name="lmiitem" Type="smallint" Nullable="false" />
+    <Property Name="lioitem" Type="smallint" Nullable="false" />
+    <Property Name="lkititem" Type="smallint" Nullable="false" />
+    <Property Name="lusekitno" Type="smallint" Nullable="false" />
+    <Property Name="llot" Type="smallint" Nullable="false" />
+    <Property Name="lsubitem" Type="smallint" Nullable="false" />
+    <Property Name="lcomplst" Type="smallint" Nullable="false" />
+    <Property Name="lmlprice" Type="smallint" Nullable="false" />
+    <Property Name="lchkonhand" Type="smallint" Nullable="false" />
+    <Property Name="lupdonhand" Type="smallint" Nullable="false" />
+    <Property Name="ltaxable1" Type="smallint" Nullable="false" />
+    <Property Name="ltaxable2" Type="smallint" Nullable="false" />
+    <Property Name="lallownupd" Type="smallint" Nullable="false" />
+    <Property Name="lallowneg" Type="smallint" Nullable="false" />
+    <Property Name="lnegprice" Type="smallint" Nullable="false" />
+    <Property Name="lowdesc" Type="smallint" Nullable="false" />
+    <Property Name="lowprice" Type="smallint" Nullable="false" />
+    <Property Name="lowdisc" Type="smallint" Nullable="false" />
+    <Property Name="lowtax" Type="smallint" Nullable="false" />
+    <Property Name="lowweight" Type="smallint" Nullable="false" />
+    <Property Name="lowrevncd" Type="smallint" Nullable="false" />
+    <Property Name="lowcomp" Type="smallint" Nullable="false" />
+    <Property Name="lprtsn" Type="smallint" Nullable="false" />
+    <Property Name="lprtlotno" Type="smallint" Nullable="false" />
+    <Property Name="lowivrmk" Type="smallint" Nullable="false" />
+    <Property Name="lptivrmk" Type="smallint" Nullable="false" />
+    <Property Name="lptarpsrmk" Type="smallint" Nullable="false" />
+    <Property Name="lowsormk" Type="smallint" Nullable="false" />
+    <Property Name="lptsormk" Type="smallint" Nullable="false" />
+    <Property Name="lptsoplrmk" Type="smallint" Nullable="false" />
+    <Property Name="lptsopsrmk" Type="smallint" Nullable="false" />
+    <Property Name="lowpormk" Type="smallint" Nullable="false" />
+    <Property Name="lptpormk" Type="smallint" Nullable="false" />
+    <Property Name="lowmirmk" Type="smallint" Nullable="false" />
+    <Property Name="lptmirmk" Type="smallint" Nullable="false" />
+    <Property Name="lowrarmk" Type="smallint" Nullable="false" />
+    <Property Name="lptrarmk" Type="smallint" Nullable="false" />
+    <Property Name="lptraplrmk" Type="smallint" Nullable="false" />
+    <Property Name="lowcoms" Type="smallint" Nullable="false" />
+    <Property Name="ldiscard" Type="smallint" Nullable="false" />
+    <Property Name="lrepair" Type="smallint" Nullable="false" />
+    <Property Name="llifetime" Type="smallint" Nullable="false" />
+    <Property Name="lprebkit" Type="smallint" Nullable="false" />
+    <Property Name="lupsitem" Type="smallint" Nullable="false" />
+    <Property Name="lupsubspec" Type="smallint" Nullable="false" />
+    <Property Name="ncosttype" Type="int" Nullable="false" />
+    <Property Name="nminprice" Type="numeric" Precision="16" Scale="4" Nullable="false" />
+    <Property Name="nqtydec" Type="int" Nullable="false" />
+    <Property Name="ndiscrate" Type="numeric" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="nweight" Type="numeric" Precision="16" Scale="2" Nullable="false" />
+    <Property Name="nstdcost" Type="numeric" Precision="16" Scale="4" Nullable="false" />
+    <Property Name="nrtrncost" Type="numeric" Precision="16" Scale="4" Nullable="false" />
+    <Property Name="nlfnhcost" Type="numeric" Precision="16" Scale="4" Nullable="false" />
+    <Property Name="nprice" Type="numeric" Precision="16" Scale="4" Nullable="false" />
+    <Property Name="nprcinctx" Type="numeric" Precision="16" Scale="4" Nullable="false" />
+    <Property Name="nspprice" Type="numeric" Precision="16" Scale="4" Nullable="false" />
+    <Property Name="nspprinctx" Type="numeric" Precision="16" Scale="4" Nullable="false" />
+    <Property Name="nlsalprice" Type="numeric" Precision="16" Scale="4" Nullable="false" />
+    <Property Name="nlsprinctx" Type="numeric" Precision="16" Scale="4" Nullable="false" />
+    <Property Name="nrstkpct" Type="numeric" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="nminrstk" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="nmrsinctx" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="nrepprice" Type="numeric" Precision="16" Scale="4" Nullable="false" />
+    <Property Name="nrpprinctx" Type="numeric" Precision="16" Scale="4" Nullable="false" />
+    <Property Name="LTAXAL" Type="smallint" />
+    <Property Name="LTAXAR" Type="smallint" />
+    <Property Name="LTAXAK" Type="smallint" />
+    <Property Name="LTAXAZ" Type="smallint" />
+    <Property Name="LTAXCA" Type="smallint" />
+    <Property Name="LTAXCO" Type="smallint" />
+    <Property Name="LTAXCT" Type="smallint" />
+    <Property Name="LTAXDE" Type="smallint" />
+    <Property Name="LTAXDC" Type="smallint" />
+    <Property Name="LTAXFL" Type="smallint" />
+    <Property Name="LTAXGA" Type="smallint" />
+    <Property Name="LTAXHI" Type="smallint" />
+    <Property Name="LTAXID" Type="smallint" />
+    <Property Name="LTAXIL" Type="smallint" />
+    <Property Name="LTAXIN" Type="smallint" />
+    <Property Name="LTAXIA" Type="smallint" />
+    <Property Name="LTAXKS" Type="smallint" />
+    <Property Name="LTAXKY" Type="smallint" />
+    <Property Name="LTAXLA" Type="smallint" />
+    <Property Name="LTAXME" Type="smallint" />
+    <Property Name="LTAXMD" Type="smallint" />
+    <Property Name="LTAXMA" Type="smallint" />
+    <Property Name="LTAXMI" Type="smallint" />
+    <Property Name="LTAXMN" Type="smallint" />
+    <Property Name="LTAXMS" Type="smallint" />
+    <Property Name="LTAXMO" Type="smallint" />
+    <Property Name="LTAXMT" Type="smallint" />
+    <Property Name="LTAXNE" Type="smallint" />
+    <Property Name="LTAXNV" Type="smallint" />
+    <Property Name="LTAXNH" Type="smallint" />
+    <Property Name="LTAXNJ" Type="smallint" />
+    <Property Name="LTAXNM" Type="smallint" />
+    <Property Name="LTAXNY" Type="smallint" />
+    <Property Name="LTAXNC" Type="smallint" />
+    <Property Name="LTAXND" Type="smallint" />
+    <Property Name="LTAXOH" Type="smallint" />
+    <Property Name="LTAXOK" Type="smallint" />
+    <Property Name="LTAXOR" Type="smallint" />
+    <Property Name="LTAXPA" Type="smallint" />
+    <Property Name="LTAXRI" Type="smallint" />
+    <Property Name="LTAXSC" Type="smallint" />
+    <Property Name="LTAXSD" Type="smallint" />
+    <Property Name="LTAXTN" Type="smallint" />
+    <Property Name="LTAXTX" Type="smallint" />
+    <Property Name="LTAXUT" Type="smallint" />
+    <Property Name="LTAXVT" Type="smallint" />
+    <Property Name="LTAXVI" Type="smallint" />
+    <Property Name="LTAXWA" Type="smallint" />
+    <Property Name="LTAXWV" Type="smallint" />
+    <Property Name="LTAXWI" Type="smallint" />
+    <Property Name="LTAXWY" Type="smallint" />
+    <Property Name="LTAXPR" Type="smallint" />
+    <Property Name="LTAXVA" Type="smallint" />
+    <Property Name="nILLowTax" Type="numeric" Precision="8" Scale="5" />
+    <Property Name="lILLowTax" Type="smallint" />
+    <Property Name="cbinlocation" Type="char" MaxLength="10" />
+    <Property Name="cLowTaxCdIL" Type="char" MaxLength="10" />
+    <Property Name="Generic" Type="char" MaxLength="10" />
+    <Property Name="lNotOnPurReq" Type="smallint" />
+    <Property Name="nFactor" Type="numeric" Precision="10" Scale="4" />
+    <Property Name="cAltCode" Type="char" MaxLength="20" />
+    <Property Name="nWhichCo" Type="smallint" />
+    <Property Name="cSBItem" Type="char" MaxLength="20" />
+    <Property Name="lalertmsg" Type="smallint" />
+    <Property Name="cSaleUom" Type="char" MaxLength="10" />
+    <Property Name="cPurUom" Type="char" MaxLength="10" />
+    <Property Name="nSalePrc" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="nPurPrc" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="lMTChecked" Type="smallint" />
+    <Property Name="nPerBox" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="nPerCase" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="nPerPallet" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="cAreaCare" Type="char" MaxLength="10" />
+    <Property Name="cformulaCatgy" Type="char" MaxLength="10" />
+    <Property Name="cCPUoM" Type="char" MaxLength="10" />
+    <Property Name="nUnitCapacity" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="nUnitCalories" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="lexpFormula" Type="smallint" />
+    <Property Name="cProdCode" Type="varchar" MaxLength="20" />
+    <Property Name="nAreaCare" Type="numeric" Precision="2" Scale="0" />
+    <Property Name="nformulaCatgy" Type="numeric" Precision="2" Scale="0" />
+    <Property Name="cRxMeasure" Type="char" MaxLength="10" />
+    <Property Name="lnonEOF" Type="smallint" />
+    <Property Name="cBillCode" Type="char" MaxLength="10" />
+    <Property Name="nUCathterType" Type="numeric" Precision="2" Scale="0" />
+    <Property Name="nUMaterial" Type="numeric" Precision="2" Scale="0" />
+    <Property Name="cUSize" Type="char" MaxLength="15" />
+    <Property Name="nTProdCatgy" Type="numeric" Precision="2" Scale="0" />
+    <Property Name="nOstoType" Type="numeric" Precision="2" Scale="0" />
+    <Property Name="nOBagSet" Type="numeric" Precision="2" Scale="0" />
+    <Property Name="nOBagType" Type="numeric" Precision="2" Scale="0" />
+    <Property Name="cOAccessType" Type="char" MaxLength="25" />
+    <Property Name="nEProdCatgy" Type="numeric" Precision="2" Scale="0" />
+    <Property Name="nUSCatheter" Type="numeric" Precision="2" Scale="0" />
+    <Property Name="cHCPCS" Type="char" MaxLength="20" />
+    <Property Name="cPumpCode" Type="varchar" MaxLength="20" />
+    <Property Name="lShipFrStk" Type="smallint" />
+    <Property Name="lVendorItm" Type="smallint" />
+    <Property Name="nFrmulHang" Type="smallint" />
+    <Property Name="nCalPerML" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="cDataScr" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="ictype">
+    <Key>
+      <PropertyRef Name="ctype" />
+    </Key>
+    <Property Name="ctype" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="ctypedesc" Type="char" MaxLength="40" Nullable="false" />
+    <Property Name="citemdesc" Type="char" MaxLength="54" Nullable="false" />
+    <Property Name="cfitemdesc" Type="char" MaxLength="54" Nullable="false" />
+    <Property Name="cmeasure" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="csmeasure" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cpmeasure" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cclass" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cprodline" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="ccommiss" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="crevncode" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cinvtacc" Type="char" MaxLength="30" />
+    <Property Name="cintracc" Type="char" MaxLength="30" />
+    <Property Name="cstatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="ctaxcode" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="laritem" Type="smallint" Nullable="false" />
+    <Property Name="lpoitem" Type="smallint" Nullable="false" />
+    <Property Name="lmiitem" Type="smallint" Nullable="false" />
+    <Property Name="lioitem" Type="smallint" Nullable="false" />
+    <Property Name="lkititem" Type="smallint" Nullable="false" />
+    <Property Name="lusekitno" Type="smallint" Nullable="false" />
+    <Property Name="llot" Type="smallint" Nullable="false" />
+    <Property Name="lusespec" Type="smallint" Nullable="false" />
+    <Property Name="lchkonhand" Type="smallint" Nullable="false" />
+    <Property Name="lupdonhand" Type="smallint" Nullable="false" />
+    <Property Name="ltaxable1" Type="smallint" Nullable="false" />
+    <Property Name="ltaxable2" Type="smallint" Nullable="false" />
+    <Property Name="lallownupd" Type="smallint" Nullable="false" />
+    <Property Name="lallowneg" Type="smallint" Nullable="false" />
+    <Property Name="lnegprice" Type="smallint" Nullable="false" />
+    <Property Name="lowdesc" Type="smallint" Nullable="false" />
+    <Property Name="lowprice" Type="smallint" Nullable="false" />
+    <Property Name="lowdisc" Type="smallint" Nullable="false" />
+    <Property Name="lowtax" Type="smallint" Nullable="false" />
+    <Property Name="lowweight" Type="smallint" Nullable="false" />
+    <Property Name="lowrevncd" Type="smallint" Nullable="false" />
+    <Property Name="lowcomp" Type="smallint" Nullable="false" />
+    <Property Name="lowcoms" Type="smallint" Nullable="false" />
+    <Property Name="lprtsn" Type="smallint" Nullable="false" />
+    <Property Name="lprtlotno" Type="smallint" Nullable="false" />
+    <Property Name="lowivrmk" Type="smallint" Nullable="false" />
+    <Property Name="lptivrmk" Type="smallint" Nullable="false" />
+    <Property Name="lptarpsrmk" Type="smallint" Nullable="false" />
+    <Property Name="lowsormk" Type="smallint" Nullable="false" />
+    <Property Name="lptsormk" Type="smallint" Nullable="false" />
+    <Property Name="lptsoplrmk" Type="smallint" Nullable="false" />
+    <Property Name="lptsopsrmk" Type="smallint" Nullable="false" />
+    <Property Name="lowpormk" Type="smallint" Nullable="false" />
+    <Property Name="lptpormk" Type="smallint" Nullable="false" />
+    <Property Name="lowmirmk" Type="smallint" Nullable="false" />
+    <Property Name="lptmirmk" Type="smallint" Nullable="false" />
+    <Property Name="lowrarmk" Type="smallint" Nullable="false" />
+    <Property Name="lptrarmk" Type="smallint" Nullable="false" />
+    <Property Name="lptraplrmk" Type="smallint" Nullable="false" />
+    <Property Name="ldiscard" Type="smallint" Nullable="false" />
+    <Property Name="lrepair" Type="smallint" Nullable="false" />
+    <Property Name="lprebkit" Type="smallint" Nullable="false" />
+    <Property Name="ncosttype" Type="int" Nullable="false" />
+    <Property Name="nqtydec" Type="int" Nullable="false" />
+    <Property Name="ndiscrate" Type="numeric" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="nweight" Type="numeric" Precision="16" Scale="2" Nullable="false" />
+    <Property Name="nstdcost" Type="numeric" Precision="16" Scale="4" Nullable="false" />
+    <Property Name="nrtrncost" Type="numeric" Precision="16" Scale="4" Nullable="false" />
+    <Property Name="nprice" Type="numeric" Precision="16" Scale="4" Nullable="false" />
+    <Property Name="nprcinctx" Type="numeric" Precision="16" Scale="4" Nullable="false" />
+    <Property Name="nrstkpct" Type="numeric" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="nminrstk" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="nmrsinctx" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="nrepprice" Type="numeric" Precision="16" Scale="4" Nullable="false" />
+    <Property Name="nrpprinctx" Type="numeric" Precision="16" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="icunit">
+    <Key>
+      <PropertyRef Name="cmeasure" />
+    </Key>
+    <Property Name="cmeasure" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cdescript" Type="char" MaxLength="35" Nullable="false" />
+    <Property Name="csymbol" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cfsymbol" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cstatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="ncnvqty" Type="numeric" Precision="16" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="sample999ModelStoreContainer">
+    <EntitySet Name="icitem" EntityType="Self.icitem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ictype" EntityType="Self.ictype" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="icunit" EntityType="Self.icunit" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

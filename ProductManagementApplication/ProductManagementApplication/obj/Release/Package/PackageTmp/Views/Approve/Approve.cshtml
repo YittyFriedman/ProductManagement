@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "Approve";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Approve Products";
+}
+
+<script src="~/Scripts/UserDefined/Approve.js"></script>
+<script src="~/Scripts/jquery.twbsPagination.min.js"></script>
+<script src="~/Scripts/jquery.twbsPagination.js"></script>
+<h2 style="padding-top:20px">@ViewData["Title"]</h2>
+<div class="container form-group">
+    <div class="row" id="divProductGrid">
+        <div style="margin-top:30px; overflow-x:scroll; width: 100%;  height: 450px;" id="divWrapTable" class="col-sm-12 ">
+
+            <table id="tblApproveProducts" class="table table-striped table-hover table-fixed">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th style="min-width:180px">Product Id</th>
+                        <th style="min-width:230px">Description</th>
+                        <th style="min-width:150px">Supplier</th>
+                        <th style="min-width:100px">Brand</th>
+                        <th style="min-width:150px">Class</th>
+                        <th style="min-width:100px">Type</th>
+                        <th style="min-width:100px">
+                            UPC
+                        </th>
+                        <th style="min-width:100px">
+                            Vendor Id
+                        </th>
+                        <th style="min-width:75px">
+                            Cost
+                        </th>
+                        <th style="min-width:75px">
+                            Weight
+                        </th>
+                        <th style="min-width:75px">
+                            Length
+                        </th>
+                        <th style="min-width:75px">
+                            Width
+                        </th>
+                        <th style="min-width:75px">
+                            Height
+                        </th>
+                        <th style="min-width:150px">
+                            One Time Product
+                        </th>
+                        <th style="min-width:120px">
+                            Date Created
+                        </th>
+                        <th style="min-width:100px">
+                            Created By
+                        </th>
+                        <th style="min-width:170px">
+                            Suitable for Channels
+                        </th>
+                        <th style="min-width:170px">
+                            Suitable for Website
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @*<tr>
+                            <td><button class="btn-sm btn-primary btnApprove" id="btnApprove" data-productid="">Approve</button></td>
+                            <td><span class="spnPrdId" id="spnPrdId">DIPAI-1GRN2LRG</span></td>
+                            <td><span class="spnDesc" id="spnDesc">this is the prdt description fredy hygt fgvbnhhjmngvvgvh</span></td>
+                            <td><span class="spnSupplier" id="spnSupplier">this is the supplier</span></td>
+                            <td><span class="spnBrand" id="spnBrand">brand</span></td>
+                            <td><span class="spnClass" id="spnClass"></span></td>
+                            <td><span class="spnUPC" id="spnUPC"></span></td>
+                            <td><span class="spnVendorId" id="spnVendorId">2343534534345</span></td>
+                            <td><span class="spnCost" id="spnCost"></span></td>
+                            <td><span class="spnWeight" id="spnWeight"></span></td>
+                            <td><span class="spnLength" id="spnLength">2343</span></td>
+                            <td><span class="spnWidth" id="spnWidth"></span></td>
+                            <td><span class="spnHeight" id="spnHeight"></span></td>
+                            <td><span class="spnIsOneTime" id="spnIsOneTime">true</span></td>
+                            <td><span class="spnDateCreated" id="spnDateCreated"></span></td>
+                            <td><span class="spnCreatedBy" id="spnCreatedBy"></span></td>
+                        </tr>*@
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="disapproveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Disapprove Product: <span id="spnDisPrdSku"></span><span id="spnDisPrdId" hidden></span></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row" id="divModelName">
+                    <div class="col-sm-5">     <label id="lblDisReason">Reason for disapproval: </label></div>
+
+                    <div class="col-sm-5">
+                        <input type="text" id="txtDisReason" required class="form-control" />
+                    </div>
+                </div>
+               
+                <br />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary btnDisItem">Disapprove</button>
+            </div>
+        </div>
+
+    </div>
+</div>

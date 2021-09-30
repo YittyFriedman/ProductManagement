@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sample999ModelStoreContainer" CdmEntityContainer="sample999Entities">
+    <EntitySetMapping Name="icunits">
+      <EntityTypeMapping TypeName="sample999Model.icunit">
+        <MappingFragment StoreEntitySet="icunit">
+          <ScalarProperty Name="cmeasure" ColumnName="cmeasure" />
+          <ScalarProperty Name="cdescript" ColumnName="cdescript" />
+          <ScalarProperty Name="csymbol" ColumnName="csymbol" />
+          <ScalarProperty Name="cfsymbol" ColumnName="cfsymbol" />
+          <ScalarProperty Name="cstatus" ColumnName="cstatus" />
+          <ScalarProperty Name="ncnvqty" ColumnName="ncnvqty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="iciwhs">
+      <EntityTypeMapping TypeName="sample999Model.iciwh">
+        <MappingFragment StoreEntitySet="iciwhs">
+          <ScalarProperty Name="nCABook" ColumnName="nCABook" />
+          <ScalarProperty Name="nInPick" ColumnName="nInPick" />
+          <ScalarProperty Name="nBranchQty" ColumnName="nBranchQty" />
+          <ScalarProperty Name="nMaxQty" ColumnName="nMaxQty" />
+          <ScalarProperty Name="lActive" ColumnName="lActive" />
+          <ScalarProperty Name="nQtyBO" ColumnName="nQtyBO" />
+          <ScalarProperty Name="nQtyCommit" ColumnName="nQtyCommit" />
+          <ScalarProperty Name="cdescript" ColumnName="cdescript" />
+          <ScalarProperty Name="cbinlocation" ColumnName="cbinlocation" />
+          <ScalarProperty Name="nreprcost" ColumnName="nreprcost" />
+          <ScalarProperty Name="nrmacost" ColumnName="nrmacost" />
+          <ScalarProperty Name="nrmaonhand" ColumnName="nrmaonhand" />
+          <ScalarProperty Name="nlrepdcost" ColumnName="nlrepdcost" />
+          <ScalarProperty Name="ntotcost" ColumnName="ntotcost" />
+          <ScalarProperty Name="nlrecvcost" ColumnName="nlrecvcost" />
+          <ScalarProperty Name="ncost" ColumnName="ncost" />
+          <ScalarProperty Name="nintransit" ColumnName="nintransit" />
+          <ScalarProperty Name="nbook" ColumnName="nbook" />
+          <ScalarProperty Name="nallocate" ColumnName="nallocate" />
+          <ScalarProperty Name="ninprocess" ColumnName="ninprocess" />
+          <ScalarProperty Name="nonorder" ColumnName="nonorder" />
+          <ScalarProperty Name="nonhand" ColumnName="nonhand" />
+          <ScalarProperty Name="nreordqty" ColumnName="nreordqty" />
+          <ScalarProperty Name="nreordpt" ColumnName="nreordpt" />
+          <ScalarProperty Name="nsafestock" ColumnName="nsafestock" />
+          <ScalarProperty Name="nmfgltime" ColumnName="nmfgltime" />
+          <ScalarProperty Name="dlastrepd" ColumnName="dlastrepd" />
+          <ScalarProperty Name="dlastrecv" ColumnName="dlastrecv" />
+          <ScalarProperty Name="crevncode" ColumnName="crevncode" />
+          <ScalarProperty Name="cintracc" ColumnName="cintracc" />
+          <ScalarProperty Name="cinvtacc" ColumnName="cinvtacc" />
+          <ScalarProperty Name="csernum" ColumnName="csernum" />
+          <ScalarProperty Name="cwarehouse" ColumnName="cwarehouse" />
+          <ScalarProperty Name="cspeccode2" ColumnName="cspeccode2" />
+          <ScalarProperty Name="cspeccode1" ColumnName="cspeccode1" />
+          <ScalarProperty Name="citemno" ColumnName="citemno" />
+          <ScalarProperty Name="cuid" ColumnName="cuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="icvends">
+      <EntityTypeMapping TypeName="sample999Model.icvend">
+        <MappingFragment StoreEntitySet="icvend">
+          <ScalarProperty Name="dLastGR" ColumnName="dLastGR" />
+          <ScalarProperty Name="dLastPo" ColumnName="dLastPo" />
+          <ScalarProperty Name="oldLast" ColumnName="oldLast" />
+          <ScalarProperty Name="cOldUoM" ColumnName="cOldUoM" />
+          <ScalarProperty Name="cWareHouse" ColumnName="cWareHouse" />
+          <ScalarProperty Name="nNoItemOnPallet" ColumnName="nNoItemOnPallet" />
+          <ScalarProperty Name="nvndwarprd" ColumnName="nvndwarprd" />
+          <ScalarProperty Name="nlastcost" ColumnName="nlastcost" />
+          <ScalarProperty Name="ncost" ColumnName="ncost" />
+          <ScalarProperty Name="nvendltime" ColumnName="nvendltime" />
+          <ScalarProperty Name="ldefault" ColumnName="ldefault" />
+          <ScalarProperty Name="dasof" ColumnName="dasof" />
+          <ScalarProperty Name="cmeasure" ColumnName="cmeasure" />
+          <ScalarProperty Name="cdescript" ColumnName="cdescript" />
+          <ScalarProperty Name="cpartno" ColumnName="cpartno" />
+          <ScalarProperty Name="cvendno" ColumnName="cvendno" />
+          <ScalarProperty Name="citemno" ColumnName="citemno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="icwhses">
+      <EntityTypeMapping TypeName="sample999Model.icwhse">
+        <MappingFragment StoreEntitySet="icwhse">
+          <ScalarProperty Name="crevncode" ColumnName="crevncode" />
+          <ScalarProperty Name="cintracc" ColumnName="cintracc" />
+          <ScalarProperty Name="cinvtacc" ColumnName="cinvtacc" />
+          <ScalarProperty Name="ctaxcode" ColumnName="ctaxcode" />
+          <ScalarProperty Name="ccontact" ColumnName="ccontact" />
+          <ScalarProperty Name="cphone" ColumnName="cphone" />
+          <ScalarProperty Name="ccountry" ColumnName="ccountry" />
+          <ScalarProperty Name="czip" ColumnName="czip" />
+          <ScalarProperty Name="cstate" ColumnName="cstate" />
+          <ScalarProperty Name="ccity" ColumnName="ccity" />
+          <ScalarProperty Name="caddr2" ColumnName="caddr2" />
+          <ScalarProperty Name="caddr1" ColumnName="caddr1" />
+          <ScalarProperty Name="cdescript" ColumnName="cdescript" />
+          <ScalarProperty Name="cwarehouse" ColumnName="cwarehouse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="icitem_map">
+      <EntityTypeMapping TypeName="sample999Model.icitem_map">
+        <MappingFragment StoreEntitySet="icitem_map">
+          <ScalarProperty Name="cOldItemno" ColumnName="cOldItemno" />
+          <ScalarProperty Name="cItemno" ColumnName="cItemno" />
+          <ScalarProperty Name="nId" ColumnName="nId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ictypes">
+      <EntityTypeMapping TypeName="sample999Model.ictype">
+        <MappingFragment StoreEntitySet="ictype">
+          <ScalarProperty Name="xxx" ColumnName="xxx" />
+          <ScalarProperty Name="nrpprinctx" ColumnName="nrpprinctx" />
+          <ScalarProperty Name="nrepprice" ColumnName="nrepprice" />
+          <ScalarProperty Name="nmrsinctx" ColumnName="nmrsinctx" />
+          <ScalarProperty Name="nminrstk" ColumnName="nminrstk" />
+          <ScalarProperty Name="nrstkpct" ColumnName="nrstkpct" />
+          <ScalarProperty Name="nprcinctx" ColumnName="nprcinctx" />
+          <ScalarProperty Name="nprice" ColumnName="nprice" />
+          <ScalarProperty Name="nrtrncost" ColumnName="nrtrncost" />
+          <ScalarProperty Name="nstdcost" ColumnName="nstdcost" />
+          <ScalarProperty Name="nweight" ColumnName="nweight" />
+          <ScalarProperty Name="ndiscrate" ColumnName="ndiscrate" />
+          <ScalarProperty Name="nqtydec" ColumnName="nqtydec" />
+          <ScalarProperty Name="ncosttype" ColumnName="ncosttype" />
+          <ScalarProperty Name="lprebkit" ColumnName="lprebkit" />
+          <ScalarProperty Name="lrepair" ColumnName="lrepair" />
+          <ScalarProperty Name="ldiscard" ColumnName="ldiscard" />
+          <ScalarProperty Name="lptraplrmk" ColumnName="lptraplrmk" />
+          <ScalarProperty Name="lptrarmk" ColumnName="lptrarmk" />
+          <ScalarProperty Name="lowrarmk" ColumnName="lowrarmk" />
+          <ScalarProperty Name="lptmirmk" ColumnName="lptmirmk" />
+          <ScalarProperty Name="lowmirmk" ColumnName="lowmirmk" />
+          <ScalarProperty Name="lptpormk" ColumnName="lptpormk" />
+          <ScalarProperty Name="lowpormk" ColumnName="lowpormk" />
+          <ScalarProperty Name="lptsopsrmk" ColumnName="lptsopsrmk" />
+          <ScalarProperty Name="lptsoplrmk" ColumnName="lptsoplrmk" />
+          <ScalarProperty Name="lptsormk" ColumnName="lptsormk" />
+          <ScalarProperty Name="lowsormk" ColumnName="lowsormk" />
+          <ScalarProperty Name="lptarpsrmk" ColumnName="lptarpsrmk" />
+          <ScalarProperty Name="lptivrmk" ColumnName="lptivrmk" />
+          <ScalarProperty Name="lowivrmk" ColumnName="lowivrmk" />
+          <ScalarProperty Name="lprtlotno" ColumnName="lprtlotno" />
+          <ScalarProperty Name="lprtsn" ColumnName="lprtsn" />
+          <ScalarProperty Name="lowcoms" ColumnName="lowcoms" />
+          <ScalarProperty Name="lowcomp" ColumnName="lowcomp" />
+          <ScalarProperty Name="lowrevncd" ColumnName="lowrevncd" />
+          <ScalarProperty Name="lowweight" ColumnName="lowweight" />
+          <ScalarProperty Name="lowtax" ColumnName="lowtax" />
+          <ScalarProperty Name="lowdisc" ColumnName="lowdisc" />
+          <ScalarProperty Name="lowprice" ColumnName="lowprice" />
+          <ScalarProperty Name="lowdesc" ColumnName="lowdesc" />
+          <ScalarProperty Name="lnegprice" ColumnName="lnegprice" />
+          <ScalarProperty Name="lallowneg" ColumnName="lallowneg" />
+          <ScalarProperty Name="lallownupd" ColumnName="lallownupd" />
+          <ScalarProperty Name="ltaxable2" ColumnName="ltaxable2" />
+          <ScalarProperty Name="ltaxable1" ColumnName="ltaxable1" />
+          <ScalarProperty Name="lupdonhand" ColumnName="lupdonhand" />
+          <ScalarProperty Name="lchkonhand" ColumnName="lchkonhand" />
+          <ScalarProperty Name="lusespec" ColumnName="lusespec" />
+          <ScalarProperty Name="llot" ColumnName="llot" />
+          <ScalarProperty Name="lusekitno" ColumnName="lusekitno" />
+          <ScalarProperty Name="lkititem" ColumnName="lkititem" />
+          <ScalarProperty Name="lioitem" ColumnName="lioitem" />
+          <ScalarProperty Name="lmiitem" ColumnName="lmiitem" />
+          <ScalarProperty Name="lpoitem" ColumnName="lpoitem" />
+          <ScalarProperty Name="laritem" ColumnName="laritem" />
+          <ScalarProperty Name="ctaxcode" ColumnName="ctaxcode" />
+          <ScalarProperty Name="cstatus" ColumnName="cstatus" />
+          <ScalarProperty Name="cintracc" ColumnName="cintracc" />
+          <ScalarProperty Name="cinvtacc" ColumnName="cinvtacc" />
+          <ScalarProperty Name="crevncode" ColumnName="crevncode" />
+          <ScalarProperty Name="ccommiss" ColumnName="ccommiss" />
+          <ScalarProperty Name="cprodline" ColumnName="cprodline" />
+          <ScalarProperty Name="cclass" ColumnName="cclass" />
+          <ScalarProperty Name="cpmeasure" ColumnName="cpmeasure" />
+          <ScalarProperty Name="csmeasure" ColumnName="csmeasure" />
+          <ScalarProperty Name="cmeasure" ColumnName="cmeasure" />
+          <ScalarProperty Name="cfitemdesc" ColumnName="cfitemdesc" />
+          <ScalarProperty Name="citemdesc" ColumnName="citemdesc" />
+          <ScalarProperty Name="ctypedesc" ColumnName="ctypedesc" />
+          <ScalarProperty Name="ctype" ColumnName="ctype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="icitems">
+      <EntityTypeMapping TypeName="sample999Model.icitem">
+        <MappingFragment StoreEntitySet="icitem">
+          <ScalarProperty Name="cDataScr" ColumnName="cDataScr" />
+          <ScalarProperty Name="cOAccessType" ColumnName="cOAccessType" />
+          <ScalarProperty Name="nOBagType" ColumnName="nOBagType" />
+          <ScalarProperty Name="nOBagSet" ColumnName="nOBagSet" />
+          <ScalarProperty Name="nOstoType" ColumnName="nOstoType" />
+          <ScalarProperty Name="cCPUoM" ColumnName="cCPUoM" />
+          <ScalarProperty Name="nCatgryId3" ColumnName="nCatgryId3" />
+          <ScalarProperty Name="nCatgryId2" ColumnName="nCatgryId2" />
+          <ScalarProperty Name="nCatgryId1" ColumnName="nCatgryId1" />
+          <ScalarProperty Name="nClassId" ColumnName="nClassId" />
+          <ScalarProperty Name="cCreatedby" ColumnName="cCreatedby" />
+          <ScalarProperty Name="cApprovdby" ColumnName="cApprovdby" />
+          <ScalarProperty Name="cBrand" ColumnName="cBrand" />
+          <ScalarProperty Name="lSuitWeb" ColumnName="lSuitWeb" />
+          <ScalarProperty Name="lSuitChanl" ColumnName="lSuitChanl" />
+          <ScalarProperty Name="lNoUPC" ColumnName="lNoUPC" />
+          <ScalarProperty Name="lOneTime" ColumnName="lOneTime" />
+          <ScalarProperty Name="nHeight" ColumnName="nHeight" />
+          <ScalarProperty Name="nWidth" ColumnName="nWidth" />
+          <ScalarProperty Name="nLength" ColumnName="nLength" />
+          <ScalarProperty Name="lSpec" ColumnName="lSpec" />
+          <ScalarProperty Name="lExpriy" ColumnName="lExpriy" />
+          <ScalarProperty Name="lSerial" ColumnName="lSerial" />
+          <ScalarProperty Name="lCAItem" ColumnName="lCAItem" />
+          <ScalarProperty Name="nCalPerML" ColumnName="nCalPerML" />
+          <ScalarProperty Name="lM2Item" ColumnName="lM2Item" />
+          <ScalarProperty Name="cAltNo2" ColumnName="cAltNo2" />
+          <ScalarProperty Name="cAltNo1" ColumnName="cAltNo1" />
+          <ScalarProperty Name="nFamilyID3" ColumnName="nFamilyID3" />
+          <ScalarProperty Name="nFamilyID2" ColumnName="nFamilyID2" />
+          <ScalarProperty Name="nFamilyID1" ColumnName="nFamilyID1" />
+          <ScalarProperty Name="nFrmulHang" ColumnName="nFrmulHang" />
+          <ScalarProperty Name="lVendorItm" ColumnName="lVendorItm" />
+          <ScalarProperty Name="lShipFrStk" ColumnName="lShipFrStk" />
+          <ScalarProperty Name="cPumpCode" ColumnName="cPumpCode" />
+          <ScalarProperty Name="nUnitCalories" ColumnName="nUnitCalories" />
+          <ScalarProperty Name="nUnitCapacity" ColumnName="nUnitCapacity" />
+          <ScalarProperty Name="cformulaCatgy" ColumnName="cformulaCatgy" />
+          <ScalarProperty Name="cProdCode" ColumnName="cProdCode" />
+          <ScalarProperty Name="cAreaCare" ColumnName="cAreaCare" />
+          <ScalarProperty Name="cHCPCS" ColumnName="cHCPCS" />
+          <ScalarProperty Name="nTProdCatgy" ColumnName="nTProdCatgy" />
+          <ScalarProperty Name="cUSize" ColumnName="cUSize" />
+          <ScalarProperty Name="nUSCatheter" ColumnName="nUSCatheter" />
+          <ScalarProperty Name="nUMaterial" ColumnName="nUMaterial" />
+          <ScalarProperty Name="nUCathterType" ColumnName="nUCathterType" />
+          <ScalarProperty Name="cBillCode" ColumnName="cBillCode" />
+          <ScalarProperty Name="lnonEOF" ColumnName="lnonEOF" />
+          <ScalarProperty Name="cRxMeasure" ColumnName="cRxMeasure" />
+          <ScalarProperty Name="nformulaCatgy" ColumnName="nformulaCatgy" />
+          <ScalarProperty Name="nAreaCare" ColumnName="nAreaCare" />
+          <ScalarProperty Name="nEProdCatgy" ColumnName="nEProdCatgy" />
+          <ScalarProperty Name="lexpFormula" ColumnName="lexpFormula" />
+          <ScalarProperty Name="nPerPallet" ColumnName="nPerPallet" />
+          <ScalarProperty Name="nPerCase" ColumnName="nPerCase" />
+          <ScalarProperty Name="nPerBox" ColumnName="nPerBox" />
+          <ScalarProperty Name="lMTChecked" ColumnName="lMTChecked" />
+          <ScalarProperty Name="nPurPrc" ColumnName="nPurPrc" />
+          <ScalarProperty Name="nSalePrc" ColumnName="nSalePrc" />
+          <ScalarProperty Name="cPurUom" ColumnName="cPurUom" />
+          <ScalarProperty Name="cSaleUom" ColumnName="cSaleUom" />
+          <ScalarProperty Name="lalertmsg" ColumnName="lalertmsg" />
+          <ScalarProperty Name="cSBItem" ColumnName="cSBItem" />
+          <ScalarProperty Name="nWhichCo" ColumnName="nWhichCo" />
+          <ScalarProperty Name="cAltCode" ColumnName="cAltCode" />
+          <ScalarProperty Name="nFactor" ColumnName="nFactor" />
+          <ScalarProperty Name="lNotOnPurReq" ColumnName="lNotOnPurReq" />
+          <ScalarProperty Name="cDummy" ColumnName="cDummy" />
+          <ScalarProperty Name="Generic" ColumnName="Generic" />
+          <ScalarProperty Name="onnhand" ColumnName="onnhand" />
+          <ScalarProperty Name="GenericItemCd" ColumnName="GenericItemCd" />
+          <ScalarProperty Name="cLowTaxCdIL" ColumnName="cLowTaxCdIL" />
+          <ScalarProperty Name="nILLowTax" ColumnName="nILLowTax" />
+          <ScalarProperty Name="lILLowTax" ColumnName="lILLowTax" />
+          <ScalarProperty Name="IllinoisLowTax" ColumnName="IllinoisLowTax" />
+          <ScalarProperty Name="Dummy_nPriceOld" ColumnName="Dummy_nPriceOld" />
+          <ScalarProperty Name="lTAXVA" ColumnName="lTAXVA" />
+          <ScalarProperty Name="lTAXAR" ColumnName="lTAXAR" />
+          <ScalarProperty Name="lTAXCA" ColumnName="lTAXCA" />
+          <ScalarProperty Name="lTAXAL" ColumnName="lTAXAL" />
+          <ScalarProperty Name="lTAXPR" ColumnName="lTAXPR" />
+          <ScalarProperty Name="lTAXWY" ColumnName="lTAXWY" />
+          <ScalarProperty Name="lTAXWI" ColumnName="lTAXWI" />
+          <ScalarProperty Name="lTAXWV" ColumnName="lTAXWV" />
+          <ScalarProperty Name="lTAXWA" ColumnName="lTAXWA" />
+          <ScalarProperty Name="lTAXVI" ColumnName="lTAXVI" />
+          <ScalarProperty Name="lTAXVT" ColumnName="lTAXVT" />
+          <ScalarProperty Name="lTAXUT" ColumnName="lTAXUT" />
+          <ScalarProperty Name="lTAXTX" ColumnName="lTAXTX" />
+          <ScalarProperty Name="lTAXTN" ColumnName="lTAXTN" />
+          <ScalarProperty Name="lTAXSD" ColumnName="lTAXSD" />
+          <ScalarProperty Name="lTAXSC" ColumnName="lTAXSC" />
+          <ScalarProperty Name="lTAXRI" ColumnName="lTAXRI" />
+          <ScalarProperty Name="lTAXPA" ColumnName="lTAXPA" />
+          <ScalarProperty Name="lTAXOR" ColumnName="lTAXOR" />
+          <ScalarProperty Name="lTAXOK" ColumnName="lTAXOK" />
+          <ScalarProperty Name="lTAXOH" ColumnName="lTAXOH" />
+          <ScalarProperty Name="lTAXND" ColumnName="lTAXND" />
+          <ScalarProperty Name="lTAXNC" ColumnName="lTAXNC" />
+          <ScalarProperty Name="lTAXNY" ColumnName="lTAXNY" />
+          <ScalarProperty Name="lTAXNM" ColumnName="lTAXNM" />
+          <ScalarProperty Name="lTAXNJ" ColumnName="lTAXNJ" />
+          <ScalarProperty Name="lTAXNH" ColumnName="lTAXNH" />
+          <ScalarProperty Name="lTAXNV" ColumnName="lTAXNV" />
+          <ScalarProperty Name="lTAXNE" ColumnName="lTAXNE" />
+          <ScalarProperty Name="lTAXMT" ColumnName="lTAXMT" />
+          <ScalarProperty Name="lTAXMO" ColumnName="lTAXMO" />
+          <ScalarProperty Name="lTAXMS" ColumnName="lTAXMS" />
+          <ScalarProperty Name="lTAXMN" ColumnName="lTAXMN" />
+          <ScalarProperty Name="lTAXMI" ColumnName="lTAXMI" />
+          <ScalarProperty Name="lTAXMA" ColumnName="lTAXMA" />
+          <ScalarProperty Name="lTAXMD" ColumnName="lTAXMD" />
+          <ScalarProperty Name="lTAXME" ColumnName="lTAXME" />
+          <ScalarProperty Name="lTAXLA" ColumnName="lTAXLA" />
+          <ScalarProperty Name="lTAXKY" ColumnName="lTAXKY" />
+          <ScalarProperty Name="lTAXKS" ColumnName="lTAXKS" />
+          <ScalarProperty Name="lTAXIA" ColumnName="lTAXIA" />
+          <ScalarProperty Name="lTAXIN" ColumnName="lTAXIN" />
+          <ScalarProperty Name="lTAXIL" ColumnName="lTAXIL" />
+          <ScalarProperty Name="lTAXID" ColumnName="lTAXID" />
+          <ScalarProperty Name="lTAXHI" ColumnName="lTAXHI" />
+          <ScalarProperty Name="lTAXGA" ColumnName="lTAXGA" />
+          <ScalarProperty Name="lTAXFL" ColumnName="lTAXFL" />
+          <ScalarProperty Name="lTAXDC" ColumnName="lTAXDC" />
+          <ScalarProperty Name="lTAXDE" ColumnName="lTAXDE" />
+          <ScalarProperty Name="lTAXCT" ColumnName="lTAXCT" />
+          <ScalarProperty Name="lTAXCO" ColumnName="lTAXCO" />
+          <ScalarProperty Name="lTAXAZ" ColumnName="lTAXAZ" />
+          <ScalarProperty Name="lTAXAK" ColumnName="lTAXAK" />
+          <ScalarProperty Name="cbinlocation" ColumnName="cbinlocation" />
+          <ScalarProperty Name="nrpprinctx" ColumnName="nrpprinctx" />
+          <ScalarProperty Name="nrepprice" ColumnName="nrepprice" />
+          <ScalarProperty Name="nmrsinctx" ColumnName="nmrsinctx" />
+          <ScalarProperty Name="nminrstk" ColumnName="nminrstk" />
+          <ScalarProperty Name="nrstkpct" ColumnName="nrstkpct" />
+          <ScalarProperty Name="nlsprinctx" ColumnName="nlsprinctx" />
+          <ScalarProperty Name="nlsalprice" ColumnName="nlsalprice" />
+          <ScalarProperty Name="nspprinctx" ColumnName="nspprinctx" />
+          <ScalarProperty Name="nspprice" ColumnName="nspprice" />
+          <ScalarProperty Name="nprcinctx" ColumnName="nprcinctx" />
+          <ScalarProperty Name="nprice" ColumnName="nprice" />
+          <ScalarProperty Name="nlfnhcost" ColumnName="nlfnhcost" />
+          <ScalarProperty Name="nrtrncost" ColumnName="nrtrncost" />
+          <ScalarProperty Name="nstdcost" ColumnName="nstdcost" />
+          <ScalarProperty Name="nweight" ColumnName="nweight" />
+          <ScalarProperty Name="ndiscrate" ColumnName="ndiscrate" />
+          <ScalarProperty Name="nqtydec" ColumnName="nqtydec" />
+          <ScalarProperty Name="nminprice" ColumnName="nminprice" />
+          <ScalarProperty Name="ncosttype" ColumnName="ncosttype" />
+          <ScalarProperty Name="lupsubspec" ColumnName="lupsubspec" />
+          <ScalarProperty Name="lupsitem" ColumnName="lupsitem" />
+          <ScalarProperty Name="lprebkit" ColumnName="lprebkit" />
+          <ScalarProperty Name="llifetime" ColumnName="llifetime" />
+          <ScalarProperty Name="lrepair" ColumnName="lrepair" />
+          <ScalarProperty Name="ldiscard" ColumnName="ldiscard" />
+          <ScalarProperty Name="lowcoms" ColumnName="lowcoms" />
+          <ScalarProperty Name="lptraplrmk" ColumnName="lptraplrmk" />
+          <ScalarProperty Name="lptrarmk" ColumnName="lptrarmk" />
+          <ScalarProperty Name="lowrarmk" ColumnName="lowrarmk" />
+          <ScalarProperty Name="lptmirmk" ColumnName="lptmirmk" />
+          <ScalarProperty Name="lowmirmk" ColumnName="lowmirmk" />
+          <ScalarProperty Name="lptpormk" ColumnName="lptpormk" />
+          <ScalarProperty Name="lowpormk" ColumnName="lowpormk" />
+          <ScalarProperty Name="lptsopsrmk" ColumnName="lptsopsrmk" />
+          <ScalarProperty Name="lptsoplrmk" ColumnName="lptsoplrmk" />
+          <ScalarProperty Name="lptsormk" ColumnName="lptsormk" />
+          <ScalarProperty Name="lowsormk" ColumnName="lowsormk" />
+          <ScalarProperty Name="lptarpsrmk" ColumnName="lptarpsrmk" />
+          <ScalarProperty Name="lptivrmk" ColumnName="lptivrmk" />
+          <ScalarProperty Name="lowivrmk" ColumnName="lowivrmk" />
+          <ScalarProperty Name="lprtlotno" ColumnName="lprtlotno" />
+          <ScalarProperty Name="lprtsn" ColumnName="lprtsn" />
+          <ScalarProperty Name="lowcomp" ColumnName="lowcomp" />
+          <ScalarProperty Name="lowrevncd" ColumnName="lowrevncd" />
+          <ScalarProperty Name="lowweight" ColumnName="lowweight" />
+          <ScalarProperty Name="lowtax" ColumnName="lowtax" />
+          <ScalarProperty Name="lowdisc" ColumnName="lowdisc" />
+          <ScalarProperty Name="lowprice" ColumnName="lowprice" />
+          <ScalarProperty Name="lowdesc" ColumnName="lowdesc" />
+          <ScalarProperty Name="lnegprice" ColumnName="lnegprice" />
+          <ScalarProperty Name="lallowneg" ColumnName="lallowneg" />
+          <ScalarProperty Name="lallownupd" ColumnName="lallownupd" />
+          <ScalarProperty Name="ltaxable2" ColumnName="ltaxable2" />
+          <ScalarProperty Name="ltaxable1" ColumnName="ltaxable1" />
+          <ScalarProperty Name="lupdonhand" ColumnName="lupdonhand" />
+          <ScalarProperty Name="lchkonhand" ColumnName="lchkonhand" />
+          <ScalarProperty Name="lmlprice" ColumnName="lmlprice" />
+          <ScalarProperty Name="lcomplst" ColumnName="lcomplst" />
+          <ScalarProperty Name="lsubitem" ColumnName="lsubitem" />
+          <ScalarProperty Name="llot" ColumnName="llot" />
+          <ScalarProperty Name="lusekitno" ColumnName="lusekitno" />
+          <ScalarProperty Name="lkititem" ColumnName="lkititem" />
+          <ScalarProperty Name="lioitem" ColumnName="lioitem" />
+          <ScalarProperty Name="lmiitem" ColumnName="lmiitem" />
+          <ScalarProperty Name="lpoitem" ColumnName="lpoitem" />
+          <ScalarProperty Name="laritem" ColumnName="laritem" />
+          <ScalarProperty Name="lusespec" ColumnName="lusespec" />
+          <ScalarProperty Name="tmodified" ColumnName="tmodified" />
+          <ScalarProperty Name="dspend" ColumnName="dspend" />
+          <ScalarProperty Name="dspstart" ColumnName="dspstart" />
+          <ScalarProperty Name="dlastfnh" ColumnName="dlastfnh" />
+          <ScalarProperty Name="dlastsale" ColumnName="dlastsale" />
+          <ScalarProperty Name="dcreate" ColumnName="dcreate" />
+          <ScalarProperty Name="ctaxcode" ColumnName="ctaxcode" />
+          <ScalarProperty Name="cbuyer" ColumnName="cbuyer" />
+          <ScalarProperty Name="cminptype" ColumnName="cminptype" />
+          <ScalarProperty Name="cvendno" ColumnName="cvendno" />
+          <ScalarProperty Name="ccommiss" ColumnName="ccommiss" />
+          <ScalarProperty Name="cprodline" ColumnName="cprodline" />
+          <ScalarProperty Name="cclass" ColumnName="cclass" />
+          <ScalarProperty Name="cpmeasure" ColumnName="cpmeasure" />
+          <ScalarProperty Name="csmeasure" ColumnName="csmeasure" />
+          <ScalarProperty Name="cmeasure" ColumnName="cmeasure" />
+          <ScalarProperty Name="cstatus" ColumnName="cstatus" />
+          <ScalarProperty Name="cbarcode2" ColumnName="cbarcode2" />
+          <ScalarProperty Name="cbarcode1" ColumnName="cbarcode1" />
+          <ScalarProperty Name="cspectype2" ColumnName="cspectype2" />
+          <ScalarProperty Name="cspectype1" ColumnName="cspectype1" />
+          <ScalarProperty Name="ctype" ColumnName="ctype" />
+          <ScalarProperty Name="cfdescript" ColumnName="cfdescript" />
+          <ScalarProperty Name="cdescript" ColumnName="cdescript" />
+          <ScalarProperty Name="citemno" ColumnName="citemno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

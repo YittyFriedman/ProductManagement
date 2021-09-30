@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProductManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Color">
+    <Key>
+      <PropertyRef Name="ColorId" />
+    </Key>
+    <Property Name="ColorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ColorDescription" Type="varchar" MaxLength="100" />
+    <Property Name="ColorCode" Type="varchar" MaxLength="10" />
+    <Property Name="IsVoided" Type="bit" />
+  </EntityType>
+  <EntityType Name="Flavor">
+    <Key>
+      <PropertyRef Name="FlavorId" />
+    </Key>
+    <Property Name="FlavorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FlavorDescription" Type="varchar" MaxLength="100" />
+    <Property Name="FlavorCode" Type="varchar" MaxLength="10" />
+    <Property Name="IsVoided" Type="bit" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="GenderId" />
+    </Key>
+    <Property Name="GenderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GenderDescription" Type="varchar" MaxLength="100" />
+    <Property Name="GenderCode" Type="varchar" MaxLength="10" />
+    <Property Name="IsVoided" Type="bit" />
+  </EntityType>
+  <EntityType Name="Orientation">
+    <Key>
+      <PropertyRef Name="OrientationId" />
+    </Key>
+    <Property Name="OrientationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrientationDescription" Type="varchar" MaxLength="100" />
+    <Property Name="OrientationCode" Type="varchar" MaxLength="10" />
+    <Property Name="IsVoided" Type="bit" />
+  </EntityType>
+  <EntityType Name="Packaging">
+    <Key>
+      <PropertyRef Name="PackagingId" />
+    </Key>
+    <Property Name="PackagingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PackagingDescription" Type="varchar" MaxLength="100" />
+    <Property Name="PackagingCode" Type="varchar" MaxLength="10" />
+    <Property Name="IsVoided" Type="bit" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductSku" Type="varchar" MaxLength="150" />
+    <Property Name="ProductIdPrefix" Type="varchar" MaxLength="20" />
+    <Property Name="ProductBaseDescription" Type="varchar" MaxLength="100" />
+    <Property Name="ProductDescription" Type="varchar" MaxLength="250" />
+    <Property Name="SupplierId" Type="int" />
+    <Property Name="Brand" Type="varchar" MaxLength="200" />
+    <Property Name="ClassId" Type="bigint" />
+    <Property Name="TypeId" Type="varchar" MaxLength="50" />
+    <Property Name="UPC" Type="varchar" MaxLength="100" />
+    <Property Name="VendorId" Type="varchar" MaxLength="100" />
+    <Property Name="Cost" Type="decimal" Precision="10" Scale="4" />
+    <Property Name="Weight" Type="decimal" Precision="10" Scale="4" />
+    <Property Name="WeightUOMId" Type="int" />
+    <Property Name="Length" Type="decimal" Precision="10" Scale="4" />
+    <Property Name="LengthUOMId" Type="int" />
+    <Property Name="Width" Type="decimal" Precision="10" Scale="4" />
+    <Property Name="WidthUOMId" Type="int" />
+    <Property Name="Height" Type="decimal" Precision="10" Scale="4" />
+    <Property Name="HeightUOMId" Type="int" />
+    <Property Name="UnitOfMeasureId" Type="int" />
+    <Property Name="IsOneTimeProduct" Type="bit" />
+    <Property Name="IsApproved" Type="bit" />
+    <Property Name="IsVoided" Type="bit" />
+    <Property Name="DateTimeCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="ProductClass">
+    <Key>
+      <PropertyRef Name="ClassId" />
+    </Key>
+    <Property Name="ClassId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClassDescription" Type="varchar" MaxLength="100" />
+    <Property Name="ClassCode" Type="varchar" MaxLength="10" />
+    <Property Name="IsVoided" Type="bit" />
+  </EntityType>
+  <EntityType Name="Size">
+    <Key>
+      <PropertyRef Name="SizeId" />
+    </Key>
+    <Property Name="SizeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SizeDescription" Type="varchar" MaxLength="100" />
+    <Property Name="SizeTitleId" Type="int" />
+    <Property Name="SizeCode" Type="varchar" MaxLength="10" />
+    <Property Name="IsVoided" Type="bit" />
+  </EntityType>
+  <EntityType Name="SizeTitle">
+    <Key>
+      <PropertyRef Name="SizeTitleId" />
+    </Key>
+    <Property Name="SizeTitleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SizeTitleDescription" Type="varchar" MaxLength="100" />
+    <Property Name="IsVoided" Type="bit" />
+  </EntityType>
+  <EntityType Name="Strength">
+    <Key>
+      <PropertyRef Name="StrengthId" />
+    </Key>
+    <Property Name="StrengthId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StrengthDescription" Type="varchar" MaxLength="100" />
+    <Property Name="StrengthCode" Type="varchar" MaxLength="10" />
+    <Property Name="IsVoided" Type="bit" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="SupplierId" />
+    </Key>
+    <Property Name="SupplierId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SupplierDescription" Type="varchar" MaxLength="200" />
+    <Property Name="IsVoided" Type="bit" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="SystemErrorLog">
+    <Key>
+      <PropertyRef Name="SystemErrorLogId" />
+    </Key>
+    <Property Name="SystemErrorLogId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Module" Type="varchar" MaxLength="500" />
+    <Property Name="Method" Type="varchar" MaxLength="500" />
+    <Property Name="ErrorMessage" Type="varchar(max)" />
+    <Property Name="SystemUser" Type="varchar" MaxLength="150" />
+    <Property Name="LogDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UnitOfMeasure">
+    <Key>
+      <PropertyRef Name="UnitOfMeasureId" />
+    </Key>
+    <Property Name="UnitOfMeasureId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnitOfMeasureDescription" Type="varchar" MaxLength="100" />
+    <Property Name="UnitOfMeasureCode" Type="varchar" MaxLength="10" />
+    <Property Name="Factor" Type="varchar" MaxLength="50" />
+    <Property Name="BaseCode" Type="varchar" MaxLength="2" />
+    <Property Name="IsVoided" Type="bit" />
+  </EntityType>
+  <EntityType Name="UnitOfMeasureCategory">
+    <Key>
+      <PropertyRef Name="UOMCategoryId" />
+    </Key>
+    <Property Name="UOMCategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UOMDescription" Type="varchar" MaxLength="50" />
+    <Property Name="UOMCode" Type="varchar" MaxLength="50" />
+    <Property Name="IsVoided" Type="bit" />
+  </EntityType>
+  <EntityType Name="UOMBase">
+    <Key>
+      <PropertyRef Name="UOMBaseId" />
+    </Key>
+    <Property Name="UOMBaseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UOMBase" Type="varchar" MaxLength="50" />
+    <Property Name="UOMBaseCode" Type="varchar" MaxLength="2" />
+  </EntityType>
+  <Association Name="FK_Product_ProductClass">
+    <End Role="ProductClass" Type="Self.ProductClass" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductClass">
+        <PropertyRef Name="ClassId" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ClassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Supplier">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="SupplierId" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="SupplierId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_UnitOfMeasureCategory">
+    <End Role="UnitOfMeasureCategory" Type="Self.UnitOfMeasureCategory" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitOfMeasureCategory">
+        <PropertyRef Name="UOMCategoryId" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="WeightUOMId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_UnitOfMeasureCategory1">
+    <End Role="UnitOfMeasureCategory" Type="Self.UnitOfMeasureCategory" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitOfMeasureCategory">
+        <PropertyRef Name="UOMCategoryId" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="LengthUOMId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_UnitOfMeasureCategory2">
+    <End Role="UnitOfMeasureCategory" Type="Self.UnitOfMeasureCategory" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitOfMeasureCategory">
+        <PropertyRef Name="UOMCategoryId" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="WidthUOMId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_UnitOfMeasureCategory3">
+    <End Role="UnitOfMeasureCategory" Type="Self.UnitOfMeasureCategory" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitOfMeasureCategory">
+        <PropertyRef Name="UOMCategoryId" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="HeightUOMId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Size_SizeTitle">
+    <End Role="SizeTitle" Type="Self.SizeTitle" Multiplicity="0..1" />
+    <End Role="Size" Type="Self.Size" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SizeTitle">
+        <PropertyRef Name="SizeTitleId" />
+      </Principal>
+      <Dependent Role="Size">
+        <PropertyRef Name="SizeTitleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProductManagementModelStoreContainer">
+    <EntitySet Name="Color" EntityType="Self.Color" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Flavor" EntityType="Self.Flavor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orientation" EntityType="Self.Orientation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Packaging" EntityType="Self.Packaging" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductClass" EntityType="Self.ProductClass" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Size" EntityType="Self.Size" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SizeTitle" EntityType="Self.SizeTitle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Strength" EntityType="Self.Strength" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SystemErrorLog" EntityType="Self.SystemErrorLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UnitOfMeasure" EntityType="Self.UnitOfMeasure" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UnitOfMeasureCategory" EntityType="Self.UnitOfMeasureCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UOMBase" EntityType="Self.UOMBase" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Product_ProductClass" Association="Self.FK_Product_ProductClass">
+      <End Role="ProductClass" EntitySet="ProductClass" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Supplier" Association="Self.FK_Product_Supplier">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_UnitOfMeasureCategory" Association="Self.FK_Product_UnitOfMeasureCategory">
+      <End Role="UnitOfMeasureCategory" EntitySet="UnitOfMeasureCategory" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_UnitOfMeasureCategory1" Association="Self.FK_Product_UnitOfMeasureCategory1">
+      <End Role="UnitOfMeasureCategory" EntitySet="UnitOfMeasureCategory" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_UnitOfMeasureCategory2" Association="Self.FK_Product_UnitOfMeasureCategory2">
+      <End Role="UnitOfMeasureCategory" EntitySet="UnitOfMeasureCategory" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_UnitOfMeasureCategory3" Association="Self.FK_Product_UnitOfMeasureCategory3">
+      <End Role="UnitOfMeasureCategory" EntitySet="UnitOfMeasureCategory" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Size_SizeTitle" Association="Self.FK_Size_SizeTitle">
+      <End Role="SizeTitle" EntitySet="SizeTitle" />
+      <End Role="Size" EntitySet="Size" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

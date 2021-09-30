@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Product Management</h1>
+    <p class="lead">Portal to add, manage, and approve Tri-State Surgical Products.</p>
+    </div>
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>Add Products</h2>
+     
+        <p>  @Html.ActionLink("Add »", "Add", "Add", new { area = "" }, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-5">
+        <h2>Manage Existing Products</h2>
+
+        <p>  @Html.ActionLink("Manage »", "Manage", "Home", new { area = "" }, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Approve Products</h2>
+
+        <p>  @Html.ActionLink("Approve »", "Approve", "Approve", new { area = "" }, new { @class = "btn btn-primary" })</p>
+    </div>
+</div>

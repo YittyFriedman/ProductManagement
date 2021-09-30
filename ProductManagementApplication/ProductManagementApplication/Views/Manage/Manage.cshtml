@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Manage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/UserDefined/Manage.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+
+<h2 style="padding-top:20px">Manage</h2>
+
+<div class="container">
+    <br />
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-6">
+            <label for="txtSrchProduct">Product Id&nbsp;</label>
+            <input type="text" style="display:inline;text-transform:uppercase" class="form-control" id="txtSrchProduct" />
+        </div>
+    </div>
+    <br />
+    <br />
+    @Html.Partial("_ManageProduct")
+</div>

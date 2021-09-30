@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Register</h1>
+
+<form method="post" action="Register">
+
+    <table cellpadding="3">
+
+        <tr>
+
+            <td style="padding-top:20px">First Name :</td>
+
+            <td style="padding-top:20px">
+
+                <input type="text" class="form-control" required name="FirstName" />
+            </td>
+
+        </tr>
+        <tr>
+
+            <td style="padding-top:20px">Last Name :</td>
+
+            <td style="padding-top:20px">
+
+                <input type="text" class="form-control" required name="LastName" />
+            </td>
+
+        </tr>
+        <tr>
+
+            <td style="padding-top:20px">Email :</td>
+
+            <td style="padding-top:20px">
+
+                <input type="text" class="form-control" required name="UserName" />
+            </td>
+
+        </tr>
+
+        <tr>
+            <td style="padding-top:20px">Password :</td>
+
+            <td style="padding-top:20px">
+
+                <input type="password" class="form-control" required name="Password" />
+            </td>
+
+
+
+        </tr>
+
+        @*<tr>
+
+                <td>City :</td>
+
+                <td>
+
+                    <input type="text" class="form-control" name="City" />
+                </td>
+
+            </tr>*@
+
+        <tr>
+
+            <td colspan="2" align="right">
+                <br />
+                <input type="submit" class="btn btn-primary" value="Register">
+            </td>
+
+        </tr>
+
+    </table>
+
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+    </script>
+}
+
