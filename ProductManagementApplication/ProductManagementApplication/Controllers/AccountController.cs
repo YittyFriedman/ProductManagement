@@ -15,7 +15,7 @@ namespace ProductManagementApplication.Controllers
 
         // GET: /Account/
 
-        private ProductManagementSecurityEntities dbs = new ProductManagementSecurityEntities();
+        //   private database1 dbs = new database1();
 
         public ActionResult Index()
 

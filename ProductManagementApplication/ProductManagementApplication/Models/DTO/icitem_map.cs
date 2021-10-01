@@ -12,10 +12,10 @@ namespace ProductManagementApplication
     using System;
     using System.Collections.Generic;
     
-    public partial class webpages_OAuthMembership
+    public partial class icitem_map
     {
-        public string Provider { get; set; }
-        public string ProviderUserId { get; set; }
-        public int UserId { get; set; }
+        public decimal nId { get; set; }
+        public string cItemno { get; set; }
+        public string cOldItemno { get; set; }
     }
 }

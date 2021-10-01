@@ -12,11 +12,13 @@ namespace ProductManagementApplication
     using System;
     using System.Collections.Generic;
     
-    public partial class webpages_UsersInRoles
+    public partial class icunit
     {
-        public int UserId { get; set; }
-        public int RoleId { get; set; }
-    
-        public virtual webpages_Roles webpages_Roles { get; set; }
+        public string cmeasure { get; set; }
+        public string cdescript { get; set; }
+        public string csymbol { get; set; }
+        public string cfsymbol { get; set; }
+        public string cstatus { get; set; }
+        public decimal ncnvqty { get; set; }
     }
 }

@@ -11,11 +11,12 @@ namespace ProductManagementApplication.Models
 {
     public class ApproveRepository
     {
-        private ProductManagementEntities db = new ProductManagementEntities();
-        private ProductManagementSecurityEntities dbs = new ProductManagementSecurityEntities();
-        private sample999Entities dbAM = new sample999Entities();
+        //   private database1 db = new database1();
+        // private database2 dbAM = new database2();
+        // private database3 mockDB = new database3();
         private ErrorTracer error = new ErrorTracer();
         private MailRepository mail = new MailRepository();
+        private MockDBTables mockDB = new MockDBTables();
         public List<ProductDTO> GetUnapprovedProducts()
         {
             List<ProductDTO> productList = new List<ProductDTO>();
@@ -23,24 +24,24 @@ namespace ProductManagementApplication.Models
             {
                 var products = new List<Product>();
 
-                var roleId = (from u in dbs.webpages_Roles where u.RoleName == "ApproveChicago" select u.RoleId).FirstOrDefault();
-                var userIdList = (from r in dbs.webpages_UsersInRoles where r.RoleId == roleId select r.UserId).ToList();
-                var userList = (from e in dbs.Users where userIdList.Contains(e.UserId) select e.UserName).ToList();
+                //var roleId = (from u in mockDB.webpages_Roles where u.RoleName == "ApproveChicago" select u.RoleId).FirstOrDefault();
+                //var userIdList = (from r in mockDB.webpages_UsersInRoles where r.RoleId == roleId select r.UserId).ToList();
+                //var userList = (from e in mockDB.Users where userIdList.Contains(e.UserId) select e.UserName).ToList();
 
-                if (userList.Contains(WebSecurity.CurrentUserName))
-                {
-                    products = (from p in db.Products where p.IsApproved != true && p.IsVoided != true && userList.Contains( p.CreatedBy) select p).OrderByDescending(x => x.DateTimeCreated).ToList();
+                //if (userList.Contains(WebSecurity.CurrentUserName))
+                //{
+                //    products = (from p in mockDB.Products where p.IsApproved != true && p.IsVoided != true && userList.Contains( p.CreatedBy) select p).OrderByDescending(x => x.DateTimeCreated).ToList();
 
-                }
+                //}
 
-                else
-                {
-                    products = (from p in db.Products where p.IsApproved != true && p.IsVoided != true select p).OrderByDescending(x => x.DateTimeCreated).ToList();
-                }
+                //else
+                //{
+                products = (from p in mockDB.Products where p.IsApproved != true && p.IsVoided != true select p).OrderByDescending(x => x.DateTimeCreated).ToList();
+                //  }
                 foreach (var prd in products)
                 {
-                   
-                    productList.Add(FormatProduct( prd));
+
+                    productList.Add(FormatProduct(prd));
 
                 }
             }
@@ -53,14 +54,12 @@ namespace ProductManagementApplication.Models
                         string message = string.Format("{0}:{1}",
                             validationErrors.Entry.Entity.ToString(),
                             validationError.ErrorMessage);
-                        //result = "error: " + message;
                     }
                 }
 
             }
             catch (Exception ex)
             {
-                //var error = ex.Message;
                 error.LogSystemError("GetUnapprovedProducts", ex.Message, WebSecurity.CurrentUserName, "Approve");
             }
             return productList.ToList();
@@ -72,16 +71,16 @@ namespace ProductManagementApplication.Models
             try
             {
                 Int64 prdId = Convert.ToInt64(productId);
-                var product = (from p in db.Products where p.ProductId == prdId select p).FirstOrDefault();
+                var product = (from p in mockDB.Products where p.ProductId == prdId select p).FirstOrDefault();
                 if (product != null)
-                { 
+                {
 
                     var amResult = SaveAMProduct(product, isStbChannel, isStbWebsite, userId);
                     if (amResult == "Success")
                     {
                         product.IsApproved = true;
                         product.ApprovedBy = userId;
-                        db.SaveChanges();
+                        mockDB.SaveChanges();
 
                         string msg = "The new product you created was approved and entered into AM."
                                    + "<br>"
@@ -123,10 +122,10 @@ namespace ProductManagementApplication.Models
             {
                 icitem AMItem = new icitem();
 
-                var amExisitingItem = (from i in dbAM.icitems where i.citemno == product.ProductSku select i).FirstOrDefault();
+                var amExisitingItem = (from i in mockDB.icitems where i.citemno == product.ProductSku select i).FirstOrDefault();
                 if (amExisitingItem != null)//item allready exists so just update item.
                 {
-                                var type = (from t in dbAM.ictypes where t.ctype == product.TypeId select t).FirstOrDefault();
+                    var type = (from t in mockDB.ictypes where t.ctype == product.TypeId select t).FirstOrDefault();
                     if (type != null)
                     {
 
@@ -181,11 +180,11 @@ namespace ProductManagementApplication.Models
                         amExisitingItem.nminrstk = type.nminrstk;
                         amExisitingItem.nrepprice = type.nrepprice;
                         amExisitingItem.lprtsn = type.lprtsn;
-                    
+
                         amExisitingItem.dcreate = DateTime.Now.Date;
 
 
-                   //     amExisitingItem.citemno = product.ProductSku;
+                        //     amExisitingItem.citemno = product.ProductSku;
                         amExisitingItem.cdescript = product.ProductDescription;
                         amExisitingItem.ctype = product.TypeId;
                         amExisitingItem.cstatus = "A";
@@ -219,70 +218,70 @@ namespace ProductManagementApplication.Models
                         amExisitingItem.lNoUPC = Convert.ToInt16(product.NoUPCFound);
                         amExisitingItem.lSuitChanl = Convert.ToInt16(Convert.ToBoolean(isStbChannel));
                         amExisitingItem.lSuitWeb = Convert.ToInt16(Convert.ToBoolean(isStbWebsite));
-                     
+
                         amExisitingItem.cCreatedby = product.CreatedBy;
                         amExisitingItem.cApprovdby = userId;
-                        dbAM.SaveChanges();
+                        mockDB.SaveChanges();
 
 
                         if (product.VendorId != "" && product.VendorId != null)
                         {
-                            var sameVendorRecord = (from r in dbAM.icvends where r.citemno == product.ProductSku && r.cvendno == product.VendorId && product.VendorPartNo == r.cpartno && r.cmeasure == uom select r).FirstOrDefault();
+                            var sameVendorRecord = (from r in mockDB.icvends where r.citemno == product.ProductSku && r.cvendno == product.VendorId && product.VendorPartNo == r.cpartno && r.cmeasure == uom select r).FirstOrDefault();
                             if (sameVendorRecord == null)
                             {
 
-                                var existingVendorRecord = (from r in dbAM.icvends where r.citemno == product.ProductSku && r.ldefault == 1 select r).FirstOrDefault();
+                                var existingVendorRecord = (from r in mockDB.icvends where r.citemno == product.ProductSku && r.ldefault == 1 select r).FirstOrDefault();
                                 if (existingVendorRecord != null)
                                 {
                                     existingVendorRecord.ldefault = 0;
-                                    dbAM.SaveChanges();
+                                    mockDB.SaveChanges();
                                 }
-                                var vendorRecord = (from v in db.Vendors where v.VendorNo == product.VendorId select v);
+                                var vendorRecord = (from v in mockDB.Vendors where v.VendorNo == product.VendorId select v);
 
-                            icvend vendor = new icvend();
-                            vendor.citemno = product.ProductSku; //icitem.citemno
-                            vendor.cvendno = product.VendorId; //AM VendNo
-                            vendor.cdescript = product.ProductDescription;
-                            vendor.cmeasure = uom;// icitem.cmeasure
-                            vendor.cpartno = product.VendorPartNo;
-                            // vendor.dasof = DateTime.Now.Date;
-                            vendor.ldefault = 1;
-                            vendor.nvendltime = 0;
-                            vendor.ncost = Convert.ToDecimal(product.Cost);//icitem.nstdcost
-                            vendor.nlastcost = 0;
-                            vendor.nvndwarprd = 0;
-                            vendor.nNoItemOnPallet = 0;
-                            vendor.cWareHouse = "";
-                            // vendor.cOldUoM = uom;
-                            // vendor.oldLast = Convert.ToDecimal(product.Cost);
-                            // vendor.dLastPo = ??;
-                            // vendor.dLastGR = ??;
-                            dbAM.icvends.Add(vendor);
-                            dbAM.SaveChanges();  
-                                
-                               
+                                icvend vendor = new icvend();
+                                vendor.citemno = product.ProductSku; //icitem.citemno
+                                vendor.cvendno = product.VendorId; //AM VendNo
+                                vendor.cdescript = product.ProductDescription;
+                                vendor.cmeasure = uom;// icitem.cmeasure
+                                vendor.cpartno = product.VendorPartNo;
+                                // vendor.dasof = DateTime.Now.Date;
+                                vendor.ldefault = 1;
+                                vendor.nvendltime = 0;
+                                vendor.ncost = Convert.ToDecimal(product.Cost);//icitem.nstdcost
+                                vendor.nlastcost = 0;
+                                vendor.nvndwarprd = 0;
+                                vendor.nNoItemOnPallet = 0;
+                                vendor.cWareHouse = "";
+                                // vendor.cOldUoM = uom;
+                                // vendor.oldLast = Convert.ToDecimal(product.Cost);
+                                // vendor.dLastPo = ??;
+                                // vendor.dLastGR = ??;
+                                mockDB.icvends.Add(vendor);
+                                mockDB.SaveChanges();
+
+
                             }
-                              
+
                         }
-                       
-                        
+
+
                         //commenting out ass product since it cant be modified in manage tab for now
-                        //var assPrd = (from p in db.ProductMappings where p.NewProductId == product.ProductSku select p).FirstOrDefault();
+                        //var assPrd = (from p in mockDB.ProductMappings where p.NewProductId == product.ProductSku select p).FirstOrDefault();
                         //if (assPrd != null)
                         //{
 
-                    
+
                         //    icitem_map itemMap = new icitem_map();
                         //    itemMap.cItemno = assPrd.NewProductId;
                         //    itemMap.cOldItemno = assPrd.OldProductId;
                         //    itemMap.nId = assPrd.ProductMappingId;
 
-                        //    dbAM.icitem_map.Add(itemMap);
-                        //    dbAM.SaveChanges();
+                        //    mockDB.icitem_map.Add(itemMap);
+                        //    mockDB.SaveChanges();
 
                         //    DeactivateOldItem(itemMap.cOldItemno);
                         //}    
-                      
+
                     }
 
                 }
@@ -290,7 +289,7 @@ namespace ProductManagementApplication.Models
                 {
 
 
-                    var type = (from t in dbAM.ictypes where t.ctype == product.TypeId select t).FirstOrDefault();
+                    var type = (from t in mockDB.ictypes where t.ctype == product.TypeId select t).FirstOrDefault();
                     if (type != null)
                     {
 
@@ -356,7 +355,7 @@ namespace ProductManagementApplication.Models
                         AMItem.llot = 0;
                         AMItem.lprtsn = 0;
                         AMItem.lusespec = 0;
-                       
+
                         AMItem.lallownupd = 1;
                         AMItem.nqtydec = 2;
                         AMItem.ncosttype = 1;
@@ -473,16 +472,16 @@ namespace ProductManagementApplication.Models
                         AMItem.lNoUPC = Convert.ToInt16(product.NoUPCFound);
                         AMItem.lSuitChanl = Convert.ToInt16(Convert.ToBoolean(isStbChannel));
                         AMItem.lSuitWeb = Convert.ToInt16(Convert.ToBoolean(isStbWebsite));
-                   
+
                         AMItem.cCreatedby = product.CreatedBy;
                         AMItem.cApprovdby = userId;
 
-                        dbAM.icitems.Add(AMItem);
-                        dbAM.SaveChanges();
+                        mockDB.icitems.Add(AMItem);
+                        mockDB.SaveChanges();
 
                         if (product.VendorId != "" && product.VendorId != null)
                         {
-                            var vendorRecord = (from v in db.Vendors where v.VendorNo == product.VendorId select v);
+                            var vendorRecord = (from v in mockDB.Vendors where v.VendorNo == product.VendorId select v);
 
                             icvend vendor = new icvend();
                             vendor.citemno = product.ProductSku; //icitem.citemno
@@ -502,32 +501,33 @@ namespace ProductManagementApplication.Models
                             // vendor.oldLast = Convert.ToDecimal(product.Cost);
                             // vendor.dLastPo = ??;
                             // vendor.dLastGR = ??;
-                            dbAM.icvends.Add(vendor);
-                            dbAM.SaveChanges();
+                            mockDB.icvends.Add(vendor);
+                            mockDB.SaveChanges();
                         }
-                        var assPrd = (from p in db.ProductMappings where p.NewProductId == product.ProductSku select p).FirstOrDefault();
-                        if (assPrd != null)
-                        {
+                        //var assPrd = (from p in mockDB.ProductMappings where p.NewProductId == product.ProductSku select p).FirstOrDefault();
+                        //if (assPrd != null)
+                        //{
 
 
-                            icitem_map itemMap = new icitem_map();
-                            itemMap.cItemno = assPrd.NewProductId;
-                            itemMap.cOldItemno = assPrd.OldProductId;
-                            itemMap.nId = assPrd.ProductMappingId;
+                        //    icitem_map itemMap = new icitem_map();
+                        //    itemMap.cItemno = assPrd.NewProductId;
+                        //    itemMap.cOldItemno = assPrd.OldProductId;
+                        //    itemMap.nId = assPrd.ProductMappingId;
 
-                            dbAM.icitem_map.Add(itemMap);
-                            dbAM.SaveChanges();
+                        //    mockDB.icitem_map.Add(itemMap);
+                        //    mockDB.SaveChanges();
 
-                            DeactivateOldItem(itemMap.cOldItemno);
-                        }
+                        //    DeactivateOldItem(itemMap.cOldItemno);
+                        //}
 
                     }
 
 
                     else
-                {
-                    result = "No Type found";
-                }    }
+                    {
+                        result = "No Type found";
+                    }
+                }
             }
             catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
             {
@@ -551,23 +551,28 @@ namespace ProductManagementApplication.Models
             return result;
         }
 
+        /// <summary>
+        /// function to take product from db and format into new ProductDTO class
+        /// </summary>
+        /// <param name="prd"></param>
+        /// <returns></returns>
         public ProductDTO FormatProduct(Product prd)
         {
-                  ProductDTO pdt = new ProductDTO();  
+            ProductDTO pdt = new ProductDTO();
             try
             {
-                var supplierList = (from s in db.Suppliers select s).ToList();
-                var classList = (from c in db.ClassHierarchies select c).ToList();
-                var uomList = (from u in db.UnitOfMeasureCategories select u).ToList();
-                var typeList = (from t in dbAM.ictypes where t.cstatus != "I" select t).ToList();
+                var supplierList = (from s in mockDB.Suppliers select s).ToList();
+                var classList = (from c in mockDB.ClassHierarchies select c).ToList();
+                var uomList = (from u in mockDB.UnitOfMeasureCategories select u).ToList();
+                var typeList = (from t in mockDB.ictypes where t.cstatus != "I" select t).ToList();
 
-        
+
                 pdt.ProductId = prd.ProductId;
                 pdt.ProductSku = prd.ProductSku;
                 pdt.ProductDescription = prd.ProductDescription;
                 var manufacturer = supplierList.Where(x => x.SupplierId == prd.SupplierId).Select(y => y.SupplierDescription).FirstOrDefault();
                 pdt.SupplierDescription = manufacturer != null ? manufacturer : "";
-                pdt.SupplierId = Convert.ToInt32( prd.SupplierId);
+                pdt.SupplierId = Convert.ToInt32(prd.SupplierId);
                 pdt.BrandDescription = prd.Brand;
                 pdt.BrandId = Convert.ToInt32(prd.BrandId);
                 pdt.ClassId1 = Convert.ToInt16(prd.ClassId1);
@@ -617,13 +622,13 @@ namespace ProductManagementApplication.Models
                 pdt.TypeDescription = prd.TypeId != null ? typeList.Where(x => x.ctype.Contains(prd.TypeId)).Select(y => y.ctypedesc).FirstOrDefault() : "";
                 pdt.TypeDescription = pdt.TypeDescription == null ? "" : pdt.TypeDescription;
                 pdt.UPC = prd.UPC == "" && Convert.ToBoolean(prd.NoUPCFound) ? "No UPC Found" : prd.UPC;
-                pdt.NoUPCFound = Convert.ToBoolean( prd.NoUPCFound);
+                pdt.NoUPCFound = Convert.ToBoolean(prd.NoUPCFound);
                 pdt.VendorId = prd.VendorId == null ? "" : prd.VendorId;
                 pdt.VendorPartNo = prd.VendorPartNo == null ? "" : prd.VendorPartNo;
                 pdt.Cost = Convert.ToDecimal(prd.Cost);
                 var uomWt = uomList.Where(x => x.UOMCategoryId == prd.WeightUOMId).Select(y => y.UOMCode).FirstOrDefault();
                 pdt.WeightCombo = Convert.ToDecimal(prd.Weight).ToString().TrimEnd('0').TrimEnd('.') + " " + uomWt;
-                pdt.WeightUOMId = Convert.ToInt32( prd.WeightUOMId);
+                pdt.WeightUOMId = Convert.ToInt32(prd.WeightUOMId);
                 var uomLg = uomList.Where(x => x.UOMCategoryId == prd.LengthUOMId).Select(y => y.UOMCode).FirstOrDefault();
                 pdt.LengthCombo = Convert.ToDecimal(prd.Length).ToString().TrimEnd('0').TrimEnd('.') + " " + uomLg;
                 pdt.LengthUOMId = Convert.ToInt32(prd.LengthUOMId);
@@ -642,23 +647,24 @@ namespace ProductManagementApplication.Models
                 pdt.UpdatedBy = prd.UpdatedBy != null ? prd.UpdatedBy : "";
                 pdt.AssociatedProduct = GetAssociatedProduct(prd.ProductSku);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-             var mes=   ex.InnerException.Message;
+                var mes = ex.InnerException.Message;
 
             }
             return pdt;
         }
-      public string  GetAssociatedProduct(string itemNo)
+        public string GetAssociatedProduct(string itemNo)
         {
             string associatedProduct = "";
-            try {
-                associatedProduct = (from p in db.ProductMappings where p.NewProductId == itemNo select p.OldProductId).FirstOrDefault();
+            try
+            {
+                associatedProduct = (from p in mockDB.ProductMappings where p.NewProductId == itemNo select p.OldProductId).FirstOrDefault();
                 associatedProduct = associatedProduct == null ? "" : associatedProduct;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-               error.LogSystemError("GetAssociatedProduct", ex.Message, WebSecurity.CurrentUserName, "Approve");
+                error.LogSystemError("GetAssociatedProduct", ex.Message, WebSecurity.CurrentUserName, "Approve");
             }
             return associatedProduct;
         }
@@ -669,14 +675,14 @@ namespace ProductManagementApplication.Models
             try
             {
                 Int64 prdId = Convert.ToInt64(productId);
-                var product = (from p in db.Products where p.ProductId == prdId select p).FirstOrDefault();
+                var product = (from p in mockDB.Products where p.ProductId == prdId select p).FirstOrDefault();
                 if (product != null)
                 {
                     product.IsApproved = false;
                     product.IsVoided = true;
                     product.ApprovedBy = userId;
                     product.DisapprovalReason = disapprovalReason;
-                    db.SaveChanges();
+                    mockDB.SaveChanges();
 
                     string msg = "The new product you created was not approved. Please make the changes requested in “Reason for Disapproval” in the Product Management > Manage Screen."
                                 + "<br>"
@@ -704,22 +710,27 @@ namespace ProductManagementApplication.Models
             }
             return result;
         }
+        /// <summary>
+        /// Get system original unit of measure
+        /// </summary>
+        /// <param name="uomId"></param>
+        /// <returns></returns>
         public string GetAMUOM(int uomId)
         {
-            var uom = (from u in db.UnitOfMeasures where u.UnitOfMeasureId == uomId select u).FirstOrDefault();
+            var uom = (from u in mockDB.UnitOfMeasures where u.UnitOfMeasureId == uomId select u).FirstOrDefault();
             string amCmsr = "";
             if (uom != null)
             {
 
 
                 var amCode = uom.BaseCode + uom.Factor;
-                var amUOM = (from a in dbAM.icunits where a.cmeasure.Contains(amCode) select a).FirstOrDefault();
+                var amUOM = (from a in mockDB.icunits where a.cmeasure.Contains(amCode) select a).FirstOrDefault();
                 if (amUOM != null)
                 {
 
-              
-                amCmsr = amUOM.cmeasure;
-            }
+
+                    amCmsr = amUOM.cmeasure;
+                }
                 else//add new AM UOM
                 {
                     icunit newUnit = new icunit();
@@ -728,10 +739,10 @@ namespace ProductManagementApplication.Models
                     newUnit.csymbol = amCode;
                     newUnit.cfsymbol = "";
                     newUnit.cstatus = "A";
-                    newUnit.ncnvqty = Convert.ToDecimal( uom.Factor);
+                    newUnit.ncnvqty = Convert.ToDecimal(uom.Factor);
 
-                    dbAM.icunits.Add(newUnit);
-                    db.SaveChanges();
+                    mockDB.icunits.Add(newUnit);
+                    mockDB.SaveChanges();
                     amCmsr = newUnit.cmeasure;
                 }
             }
@@ -743,11 +754,11 @@ namespace ProductManagementApplication.Models
         {
             try
             {
-                var amItem = (from c in dbAM.icitems where c.citemno == itemNo select c).FirstOrDefault();
+                var amItem = (from c in mockDB.icitems where c.citemno == itemNo select c).FirstOrDefault();
                 amItem.cstatus = "I";
-                dbAM.SaveChanges();
+                mockDB.SaveChanges();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 error.LogSystemError("DeactivateOldItem", ex.Message, WebSecurity.CurrentUserName, "Approve");
 

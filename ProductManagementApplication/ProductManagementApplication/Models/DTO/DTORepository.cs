@@ -61,10 +61,7 @@ namespace ProductManagementApplication.Models.DTO
         public string DateUpdated { get; set; }
         public string UpdatedBy { get; set; }
         public string AssociatedProduct { get; set; }
-        //public ProductDTO()
-        //{
-        //    this.AssociatedProductList = new List<string>();
-        //}
+        
 
     }
 

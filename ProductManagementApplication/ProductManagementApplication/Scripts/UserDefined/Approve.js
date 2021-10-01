@@ -981,11 +981,11 @@ var SAVE = {
                 }
                 else {
                     if (hasAssPrd == "true") {
-                        alert("Product was successfully approved and entered into AccountMate. All associated products have been set to inactive in AM.");
+                        alert("Product was successfully approved and entered into System. All associated products have been set to inactive in AM.");
 
                     }
                     else {
-                        alert("Product was successfully approved and entered into AccountMate.");
+                        alert("Product was successfully approved and entered into System.");
 
                     }
                     location.reload();
@@ -1110,7 +1110,7 @@ var SAVE = {
                     alert("Error while updating product: \n" + res.result);
                 }
                 else {
-                    alert("Product was successfully updated! \nPlease note, product will not appear in AccountMate until it is approved.");
+                    alert("Product was successfully updated! \nPlease note, product will not appear in System until it is approved.");
                     location.reload();
                 }
             },

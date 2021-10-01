@@ -12,18 +12,20 @@ namespace ProductManagementApplication
     using System;
     using System.Collections.Generic;
     
-    public partial class webpages_Roles
+    public partial class ProductClass
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public webpages_Roles()
+        public ProductClass()
         {
-            this.webpages_UsersInRoles = new HashSet<webpages_UsersInRoles>();
+            this.Products = new HashSet<Product>();
         }
     
-        public int RoleId { get; set; }
-        public string RoleName { get; set; }
+        public long ClassId { get; set; }
+        public string ClassDescription { get; set; }
+        public string ClassCode { get; set; }
+        public Nullable<bool> IsVoided { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<webpages_UsersInRoles> webpages_UsersInRoles { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

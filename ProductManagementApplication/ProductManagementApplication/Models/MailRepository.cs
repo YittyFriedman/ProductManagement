@@ -15,8 +15,8 @@ namespace ProductManagementApplication.Models
             string MailResult = null;
             try
             {
-                String userName = "Yitty@mbsny.net";
-                String password = "Accountmate@2694";
+                String userName = "";
+                String password = "";
                 MailMessage msg = new MailMessage();
 
                 foreach (var recepient in toList)
@@ -24,13 +24,13 @@ namespace ProductManagementApplication.Models
                     msg.To.Add(recepient);
                 }
 
-                msg.CC.Add(new MailAddress("Yitty@mbsny.net"));
+                msg.CC.Add(new MailAddress(""));
                 msg.From = new MailAddress(userName);
                 msg.Subject = subject;
                 msg.Body = body;
                 msg.IsBodyHtml = true;
                 SmtpClient client = new SmtpClient();
-                client.Host = "smtp.office365.com";
+                client.Host = "";
                 client.Credentials = new System.Net.NetworkCredential(userName, password);
                 client.Port = 25;
                 client.EnableSsl = true;

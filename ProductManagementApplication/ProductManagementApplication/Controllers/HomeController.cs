@@ -16,11 +16,10 @@ namespace ProductManagementApplication.Controllers
 
             //{
 
-                //Response.Redirect("~/Account/Login");
+            //Response.Redirect("~/Account/Login");
 
-           // }
-
-            return View();
+            // }
+           return View();
         }
 
       

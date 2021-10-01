@@ -19,7 +19,7 @@ namespace ProductManagementApplication.Controllers
             return View();
         }
 
-     
+
         public ActionResult Manage()
         {
             //if (!WebSecurity.IsAuthenticated)
@@ -33,7 +33,10 @@ namespace ProductManagementApplication.Controllers
             return View();
         }
 
-
+        /// <summary>
+        /// function to get list of all products which can be modified
+        /// </summary>
+        /// <returns></returns>
         public ActionResult GetProductIdList()
         {
             var res = new JsonResult();
@@ -48,6 +51,11 @@ namespace ProductManagementApplication.Controllers
 
             return res;
         }
+        /// <summary>
+        /// function to save the modifications to the product 
+        /// </summary>
+        /// <param name="productData"></param>
+        /// <returns></returns>
         public ActionResult SaveProducts(string productData)
         {
             var res = new JsonResult();

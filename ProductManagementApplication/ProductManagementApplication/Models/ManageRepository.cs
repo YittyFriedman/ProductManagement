@@ -10,21 +10,22 @@ namespace ProductManagementApplication.Models
 {
     public class ManageRepository
     {
-        private ProductManagementEntities db = new ProductManagementEntities();
-        private sample999Entities dbAM = new sample999Entities();
+        //   private database1 db = new database1();
+        // private database2 dbAM = new database2();
         private ErrorTracer error = new ErrorTracer();
         private MailRepository mail = new MailRepository();
         private ApproveRepository apprepo = new ApproveRepository();
+        private MockDBTables mockDB = new MockDBTables();
         public List<ProductDTO> GetProductIdList()
         {
             List<ProductDTO> productList = new List<ProductDTO>();
             try
             {
-                var products = (from p in db.Products select p).ToList();
-                var supplierList = (from s in db.Suppliers select s).ToList();
-                var classList = (from c in db.ClassHierarchies select c).ToList();
-                var uomList = (from u in db.UnitOfMeasureCategories select u).ToList();
-                var typeList = (from t in dbAM.ictypes select t).ToList();
+                var products = (from p in mockDB.Products select p).ToList();
+                var supplierList = (from s in mockDB.Suppliers select s).ToList();
+                var classList = (from c in mockDB.ClassHierarchies select c).ToList();
+                var uomList = (from u in mockDB.UnitOfMeasureCategories select u).ToList();
+                var typeList = (from t in mockDB.ictypes select t).ToList();
 
                 foreach (var prd in products)
                 {
@@ -130,7 +131,7 @@ namespace ProductManagementApplication.Models
             var result = "success";
             try
             {
-                var oldProduct = (from p in db.Products where p.ProductId == product.ProductId select p).FirstOrDefault();
+                var oldProduct = (from p in mockDB.Products where p.ProductId == product.ProductId select p).FirstOrDefault();
 
                 oldProduct.SupplierId = product.SupplierId;
                 oldProduct.BrandId = product.BrandId;
@@ -141,8 +142,8 @@ namespace ProductManagementApplication.Models
                     Brand brd = new Brand();
                     brd.BrandDescription = product.Brand;
                     brd.IsVoided = false;
-                    db.Brands.Add(brd);
-                    db.SaveChanges();
+                    mockDB.Brands.Add(brd);
+                    mockDB.SaveChanges();
                     product.BrandId = Convert.ToInt32(brd.BrandId);
                 }
                 oldProduct.BrandId = product.BrandId;
@@ -173,7 +174,7 @@ namespace ProductManagementApplication.Models
                 oldProduct.DateTimeUpdated = DateTime.Now;
                 oldProduct.UpdatedBy = product.UpdatedBy;
 
-                db.SaveChanges();
+                mockDB.SaveChanges();
 
             }
             catch (Exception ex)

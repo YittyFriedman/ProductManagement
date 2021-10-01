@@ -975,7 +975,7 @@ var SAVE = {
                     alert("Error while updating product: \n" + res.result);
                 }
                 else {
-                    alert("Product was successfully updated! \nPlease note, product will not appear in AccountMate until it is approved.");
+                    alert("Product was successfully updated! \nPlease note, product will not appear in System until it is approved.");
                     location.reload();
                 }
             },

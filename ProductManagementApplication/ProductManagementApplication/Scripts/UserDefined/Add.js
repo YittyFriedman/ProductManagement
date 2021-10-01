@@ -2514,7 +2514,7 @@ var SAVE = {
                     alert("Error while saving products: \n" + res.result);
                 }
                 else {
-                    alert("Products where successfully saved! \nPlease note, products will not appear in AccountMate until they are approved.");
+                    alert("Products where successfully saved! \nPlease note, products will not appear in System until they are approved.");
                     location.reload();
                 }
             },

@@ -15,6 +15,12 @@ namespace ProductManagementApplication.Models
        // private database2 dbAM = new database2();
         private ErrorTracer error = new ErrorTracer();
         private MockDBTables mockDB = new MockDBTables();
+
+        /// <summary>
+        /// function to check if item exists in old system
+        /// </summary>
+        /// <param name="itemNo"></param>
+        /// <returns></returns>
         public icitem GetAMProduct(string itemNo)
         {
 
@@ -63,13 +69,6 @@ namespace ProductManagementApplication.Models
             List<SupplierDTO> supplierList = new List<SupplierDTO>();
             try
             {
-                //adding demo data
-                Supplier suppliertest = new Supplier();
-                suppliertest.SupplierDescription = "Manufacturer 1";
-                suppliertest.SupplierId = 1;
-                mockDB.Suppliers.Add(suppliertest);
-
-
                 var supplierdbList = (from s in mockDB.Suppliers where s.IsVoided != true select s).OrderBy(x => x.SupplierDescription).ToList();
                 foreach (var sup in supplierdbList)
                 {
@@ -91,12 +90,7 @@ namespace ProductManagementApplication.Models
             List<BrandDTO> brandList = new List<BrandDTO>();
             try
             {
-                //adding demo data
-                Brand brandtest = new Brand();
-                brandtest.BrandDescription = "Brand Test 1";
-                brandtest.BrandId = 1;
-                mockDB.Brands.Add(brandtest);
-
+               
                 var brandDb = (from b in mockDB.Brands where b.IsVoided != true select b).OrderBy(x => x.BrandDescription).ToList();
                 foreach (var brnd in brandDb)
                 {
@@ -118,12 +112,7 @@ namespace ProductManagementApplication.Models
             List<Vendor> vendorList = new List<Vendor>();
             try
             {
-                Vendor ven = new Vendor();
-                ven.VendorNo = "1234";
-                ven.VendorId = 1;
-                ven.CompanyName = "Vendor 1";
-                mockDB.Vendors.Add(ven);
-
+                
 
                 vendorList = (from v in mockDB.Vendors where v.IsVoid != true select v).OrderBy(x => x.VendorNo).ToList();
 
@@ -139,15 +128,8 @@ namespace ProductManagementApplication.Models
             List<ClassHierarchyDTO> classList = new List<ClassHierarchyDTO>();
             try
             {
-                ClassHierarchy classHierarchyTest = new ClassHierarchy();
-                classHierarchyTest.ClassHierarchyId = 1;
-                classHierarchyTest.ClassHierarchyRevNo = 1;
-                classHierarchyTest.Level1 = "Supplies";
-                classHierarchyTest.Level2 = "Disposables";
-                classHierarchyTest.Level3 = "Gloves";
-                classHierarchyTest.Level4 = "";
-                mockDB.ClassHierarchies.Add(classHierarchyTest) ;
-
+        
+           
                 var classdbList = (from c in mockDB.ClassHierarchies where c.IsVoided != true select c).ToList();
                 var level1List = classdbList.Select(x => x.Level1).Distinct().ToList();
                 ClassHierarchyDTO chd = new ClassHierarchyDTO();
@@ -225,10 +207,7 @@ namespace ProductManagementApplication.Models
         {
             List<ictype> typeList = new List<ictype>();
             try
-            {
-                ictype type = new ictype();
-                type.ctype = "Type 1";
-                mockDB.ictypes.Add(type);
+            {       
 
                 typeList = (from t in mockDB.ictypes where t.cstatus == "A" select t).OrderBy(x => x.ctype).ToList();
             }
@@ -245,12 +224,7 @@ namespace ProductManagementApplication.Models
             List<Color> colorList = new List<Color>();
             try
             {
-                Color color = new Color();
-                color.ColorCode = "RED";
-                color.ColorDescription = "Red";
-                color.ColorId = 1;
-                mockDB.Colors.Add(color);
-
+                       
                 colorList = (from c in mockDB.Colors where c.IsVoided != true select c).OrderBy(x => x.ColorDescription).ToList();
             }
             catch (Exception ex)
@@ -265,21 +239,7 @@ namespace ProductManagementApplication.Models
             List<SizeHeaderDTO> sizeList = new List<SizeHeaderDTO>();
             try
             {
-                Size sizetest = new Size();
-                sizetest.SizeId = 1;
-                sizetest.SizeCode = "SML";
-                sizetest.SizeDescription = "Small";
-                sizetest.SizeTitleId = 1;
-
-                mockDB.Sizes.Add(sizetest);
-                SizeTitle sizetitletest = new SizeTitle();
-                sizetitletest.SizeTitleId = 1;
-                sizetitletest.SizeTitleDescription = "General";
-
-                mockDB.SizeTitles.Add(sizetitletest);
-
-
-                var generalSizeList = (from s in mockDB.Sizes where s.IsVoided != true select s).ToList();
+                    var generalSizeList = (from s in mockDB.Sizes where s.IsVoided != true select s).ToList();
                 var sizeTitleList = (from t in mockDB.SizeTitles where t.IsVoided != true select t).ToList();
                 var titles = generalSizeList.Select(x => x.SizeTitleId).Distinct().ToList();
                 foreach (var title in titles)
@@ -310,12 +270,7 @@ namespace ProductManagementApplication.Models
             List<SizeHeaderDTO> titleList = new List<SizeHeaderDTO>();
             try
             {
-                SizeTitle sizetitletest = new SizeTitle();
-                sizetitletest.SizeTitleId = 1;
-                sizetitletest.SizeTitleDescription = "General";
-
-                mockDB.SizeTitles.Add(sizetitletest);
-                var dbTitleList = (from t in mockDB.SizeTitles where t.IsVoided != true select t).OrderBy(x => x.SizeTitleDescription).ToList();
+                 var dbTitleList = (from t in mockDB.SizeTitles where t.IsVoided != true select t).OrderBy(x => x.SizeTitleDescription).ToList();
                 foreach (var title in dbTitleList)
                 {
                     SizeHeaderDTO shd = new SizeHeaderDTO();
@@ -338,12 +293,7 @@ namespace ProductManagementApplication.Models
 
             try
             {
-                Orientation ornttest = new Orientation();
-                ornttest.OrientationCode = "VRT";
-                ornttest.OrientationDescription = "Vertical";
-                ornttest.OrientationId = 1;
-                mockDB.Orientations.Add(ornttest);
-
+              
                 orientationList = (from o in mockDB.Orientations where o.IsVoided != true select o).OrderBy(x => x.OrientationDescription).ToList();
             }
             catch (Exception ex)
@@ -358,13 +308,7 @@ namespace ProductManagementApplication.Models
             List<Flavor> flavorList = new List<Flavor>();
             try
             {
-                Flavor flvrtest = new Flavor();
-                flvrtest.FlavorCode = "VNL";
-                flvrtest.FlavorDescription = "Vanilla";
-                flvrtest.FlavorId = 1;
-                mockDB.Flavors.Add(flvrtest);
-
-                flavorList = (from f in mockDB.Flavors where f.IsVoided != true select f).OrderBy(x => x.FlavorDescription).ToList();
+            flavorList = (from f in mockDB.Flavors where f.IsVoided != true select f).OrderBy(x => x.FlavorDescription).ToList();
             }
             catch (Exception ex)
             {
@@ -378,12 +322,7 @@ namespace ProductManagementApplication.Models
             
             try
             {
-                Packaging pcktest = new Packaging();
-                pcktest.PackagingCode = "10U";
-                pcktest.PackagingDescription = "10 Units";
-                pcktest.PackagingId = 1;
-                mockDB.Packagings.Add(pcktest);
-
+           
                 packagingList = (from p in mockDB.Packagings where p.IsVoided != true select p).OrderBy(x => x.PackagingDescription).ToList();
             }
             catch (Exception ex)
@@ -398,15 +337,8 @@ namespace ProductManagementApplication.Models
             List<UnitOfMeasure> uomList = new List<UnitOfMeasure>();
             try
             {
-                UnitOfMeasure uomtest = new UnitOfMeasure();
-                uomtest.BaseCode = "Box";
-                uomtest.Factor = "10";
-                uomtest.UnitOfMeasureCode = "10B";
-                uomtest.UnitOfMeasureDescription = "10 Box";
-                uomtest.UnitOfMeasureId = 1;
-                mockDB.UnitOfMeasures.Add(uomtest);
 
-                uomList = (from u in mockDB.UnitOfMeasures where u.IsVoided != true select u).OrderBy(x => x.BaseCode).ThenBy(y => y.Factor).ToList();
+               uomList = (from u in mockDB.UnitOfMeasures where u.IsVoided != true select u).OrderBy(x => x.BaseCode).ThenBy(y => y.Factor).ToList();
             }
             catch (Exception ex)
             {
@@ -433,7 +365,7 @@ namespace ProductManagementApplication.Models
             List<Gender> genderList = new List<Gender>();
             try
             {
-                genderList = (from g in mockDB.Genders where g.IsVoided != true select g).ToList();
+                  genderList = (from g in mockDB.Genders where g.IsVoided != true select g).ToList();
             }
             catch (Exception ex)
             {
@@ -447,7 +379,7 @@ namespace ProductManagementApplication.Models
             List<Other> otherList = new List<Other>();
             try
             {
-                otherList = (from f in mockDB.Other where f.IsVoided != true select f).OrderBy(x => x.OtherDescription).ToList();
+               otherList = (from f in mockDB.Other where f.IsVoided != true select f).OrderBy(x => x.OtherDescription).ToList();
             }
             catch (Exception ex)
             {
@@ -460,6 +392,7 @@ namespace ProductManagementApplication.Models
             List<UnitOfMeasureCategoryDTO> uomList = new List<UnitOfMeasureCategoryDTO>();
             try
             {
+              
                 var uomdbList = (from u in mockDB.UnitOfMeasureCategories where u.IsVoided != true select u).ToList();
                 foreach (var uom in uomdbList)
                 {
@@ -484,8 +417,7 @@ namespace ProductManagementApplication.Models
         {
             List<UnitOfMeasureCategoryDTO> uomList = new List<UnitOfMeasureCategoryDTO>();
             try
-            {
-                var uomdbList = (from u in mockDB.UOMBases select u).ToList();
+            { var uomdbList = (from u in mockDB.UOMBases select u).ToList();
                 foreach (var uom in uomdbList)
                 {
                     UnitOfMeasureCategoryDTO udt = new UnitOfMeasureCategoryDTO();
@@ -504,6 +436,11 @@ namespace ProductManagementApplication.Models
 
             return uomList.OrderBy(x => x.UOMDescription).ToList();
         }
+        /// <summary>
+        /// this functions generates the products ids. system uses the product id as the prefix and appends the variant codes to the end so product ids can be easily read.
+        /// </summary>
+        /// <param name="productList"></param>
+        /// <returns></returns>
         public List<Product> GenerateProductIds(ProductDTO productList)
         {
 
@@ -781,16 +718,7 @@ namespace ProductManagementApplication.Models
             }
         }
 
-        //public void SaveNewClass(string className, string classCode)
-        //{
-        //    ProductClass pClass = new ProductClass();
-        //    pClass.ClassDescription = className;
-        //    pClass.ClassCode = classCode.ToUpper();
-        //    pClass.IsVoided = false;
-        //    mockDB.ProductClasses.Add(pClass);
-        //    mockDB.SaveChanges();
-
-        //}
+      
         public string SaveNewColor(string colorName, string colorCode)
         {
             var existingColorCode = (from c in mockDB.Colors where c.ColorCode.Trim() == colorCode select c).FirstOrDefault();
@@ -963,8 +891,7 @@ namespace ProductManagementApplication.Models
                     product.IsApproved = false;
                     product.IsVoided = false;
                     product.DateTimeCreated = DateTime.Now;
-                    //      product.CreatemockDBy = WebSecurity.CurrentUserName;
-                    mockDB.Products.Add(product);
+                     mockDB.Products.Add(product);
                     mockDB.SaveChanges();
                 }
             }

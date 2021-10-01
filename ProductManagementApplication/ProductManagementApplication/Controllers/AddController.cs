@@ -16,11 +16,12 @@ namespace ProductManagementApplication.Controllers
     public class AddController : Controller
     {
         private AddRepository addRepo = new AddRepository();
-      //  private ProductManagementSecurityEntities dbs = new ProductManagementSecurityEntities();
+        //private ProductManagementSecurityEntities dbs = new ProductManagementSecurityEntities();
+
         // GET: Add
         public ActionResult Index()
         {
-          
+
             return View();
         }
 
@@ -33,13 +34,16 @@ namespace ProductManagementApplication.Controllers
             //    Response.Redirect("~/Account/Login");
 
             //}
-            MockDBTables mockDB = new MockDBTables();
-            mockDB.InitializeTables();
             return View();
         }
 
         #region GET
-         public ActionResult GetAMProduct(string itemNo)
+        /// <summary>
+        /// Function to check if item exists in system
+        /// </summary>
+        /// <param name="itemNo"></param>
+        /// <returns></returns>
+        public ActionResult GetAMProduct(string itemNo)
         {
             var res = new JsonResult();
             var amItem = addRepo.GetAMProduct(itemNo);
@@ -53,14 +57,17 @@ namespace ProductManagementApplication.Controllers
 
             return res;
         }
-
+        /// <summary>
+        /// function to get permissions if user can use the refactor functionality
+        /// </summary>
+        /// <returns></returns>
         public ActionResult GetRefactorPermissions()
         {
             var res = new JsonResult();
             //     var roleId = (from r in dbs.webpages_Roles where r.RoleName == "Refactor" select r.RoleId).SingleOrDefault();
             //   var userRoleRecord = (from u in dbs.webpages_UsersInRoles where u.UserId == WebSecurity.CurrentUserId && u.RoleId == roleId select u).FirstOrDefault();
             //  var hasRefactorPermissions = userRoleRecord != null ? true: false;
-            var hasRefactorPermissions = true;
+            var hasRefactorPermissions = false;
             res.MaxJsonLength = int.MaxValue;
             res.Data = new
             {
@@ -69,7 +76,12 @@ namespace ProductManagementApplication.Controllers
             res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
             return res;
         }
-
+        /// <summary>
+        /// function to get similiar items which user may want to link when refactoring item
+        /// </summary>
+        /// <param name="itemNo"></param>
+        /// <param name="desc"></param>
+        /// <returns></returns>
         public ActionResult GetSiblingItems(string itemNo, string desc)
         {
             ///JavaScriptSerializer jss = new JavaScriptSerializer();
@@ -89,18 +101,18 @@ namespace ProductManagementApplication.Controllers
         public ActionResult GetSuppliers()
         {
             var res = new JsonResult();
-              var supplierList = addRepo.GetSuppliers();
+            var supplierList = addRepo.GetSuppliers();
 
-                res.MaxJsonLength = int.MaxValue;
-                res.Data = new
-                {
-                    supplierList
-                };
-                res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-          
+            res.MaxJsonLength = int.MaxValue;
+            res.Data = new
+            {
+                supplierList
+            };
+            res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+
             return res;
         }
-         public ActionResult GetBrands()
+        public ActionResult GetBrands()
         {
             var res = new JsonResult();
             var brandList = addRepo.GetBrands();
@@ -131,32 +143,32 @@ namespace ProductManagementApplication.Controllers
         public ActionResult GetClasses()
         {
             var res = new JsonResult();
-               var classList = addRepo.GetClasses();
+            var classList = addRepo.GetClasses();
 
-                res.MaxJsonLength = int.MaxValue;
-                res.Data = new
-                {
-                    classList
-                };
-                res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-           
+            res.MaxJsonLength = int.MaxValue;
+            res.Data = new
+            {
+                classList
+            };
+            res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+
             return res;
         }
 
-        
-               public ActionResult GetTypes()
+
+        public ActionResult GetTypes()
         {
             var res = new JsonResult();
-           
-                var typeList = addRepo.GetTypes();
 
-                res.MaxJsonLength = int.MaxValue;
-                res.Data = new
-                {
-                    typeList
-                };
-                res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-           
+            var typeList = addRepo.GetTypes();
+
+            res.MaxJsonLength = int.MaxValue;
+            res.Data = new
+            {
+                typeList
+            };
+            res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+
             return res;
         }
 
@@ -165,136 +177,136 @@ namespace ProductManagementApplication.Controllers
             var res = new JsonResult();
             var colorList = addRepo.GetColors();
 
-                res.MaxJsonLength = int.MaxValue;
-                res.Data = new
-                {
-                    colorList
-                };
-                res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-          
+            res.MaxJsonLength = int.MaxValue;
+            res.Data = new
+            {
+                colorList
+            };
+            res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+
             return res;
         }
 
         public ActionResult GetSizes()
         {
             var res = new JsonResult();
-             var sizeList = addRepo.GetSizes();
+            var sizeList = addRepo.GetSizes();
 
-                res.MaxJsonLength = int.MaxValue;
-                res.Data = new
-                {
-                    sizeList
-                };
-                res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-           
+            res.MaxJsonLength = int.MaxValue;
+            res.Data = new
+            {
+                sizeList
+            };
+            res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+
             return res;
         }
         public ActionResult GetSizeTitles()
         {
             var res = new JsonResult();
-           
-                var sizeTitleList = addRepo.GetSizeTitles();
 
-                res.MaxJsonLength = int.MaxValue;
-                res.Data = new
-                {
-                    sizeTitleList
-                };
-                res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-           
+            var sizeTitleList = addRepo.GetSizeTitles();
+
+            res.MaxJsonLength = int.MaxValue;
+            res.Data = new
+            {
+                sizeTitleList
+            };
+            res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+
             return res;
         }
         public ActionResult GetOrientations()
         {
             var res = new JsonResult();
-           
-                var orientationList = addRepo.GetOrientations();
 
-                res.MaxJsonLength = int.MaxValue;
-                res.Data = new
-                {
-                    orientationList
-                };
-                res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-           
+            var orientationList = addRepo.GetOrientations();
+
+            res.MaxJsonLength = int.MaxValue;
+            res.Data = new
+            {
+                orientationList
+            };
+            res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+
             return res;
         }
 
         public ActionResult GetFlavors()
         {
             var res = new JsonResult();
-          
-                var flavorList = addRepo.GetFlavors();
 
-                res.MaxJsonLength = int.MaxValue;
-                res.Data = new
-                {
-                    flavorList
-                };
-                res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-           
+            var flavorList = addRepo.GetFlavors();
+
+            res.MaxJsonLength = int.MaxValue;
+            res.Data = new
+            {
+                flavorList
+            };
+            res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+
             return res;
         }
 
         public ActionResult GetPackagings()
         {
             var res = new JsonResult();
-           
-                var packagingList = addRepo.GetPackagings();
 
-                res.MaxJsonLength = int.MaxValue;
-                res.Data = new
-                {
-                    packagingList
-                };
-                res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-         
+            var packagingList = addRepo.GetPackagings();
+
+            res.MaxJsonLength = int.MaxValue;
+            res.Data = new
+            {
+                packagingList
+            };
+            res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+
             return res;
         }
 
         public ActionResult GetUOMs()
         {
             var res = new JsonResult();
-              var uomList = addRepo.GetUOMs();
+            var uomList = addRepo.GetUOMs();
 
-                res.MaxJsonLength = int.MaxValue;
-                res.Data = new
-                {
-                    uomList
-                };
-                res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-          
+            res.MaxJsonLength = int.MaxValue;
+            res.Data = new
+            {
+                uomList
+            };
+            res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+
             return res;
         }
 
         public ActionResult GetStrengths()
         {
             var res = new JsonResult();
-          
-                var strengthList = addRepo.GetStrengths();
 
-                res.MaxJsonLength = int.MaxValue;
-                res.Data = new
-                {
-                    strengthList
-                };
-                res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-           
+            var strengthList = addRepo.GetStrengths();
+
+            res.MaxJsonLength = int.MaxValue;
+            res.Data = new
+            {
+                strengthList
+            };
+            res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+
             return res;
         }
 
         public ActionResult GetGenders()
         {
             var res = new JsonResult();
-             var genderList = addRepo.GetGenders();
+            var genderList = addRepo.GetGenders();
 
-                res.MaxJsonLength = int.MaxValue;
-                res.Data = new
-                {
-                    genderList
-                };
-                res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-          
+            res.MaxJsonLength = int.MaxValue;
+            res.Data = new
+            {
+                genderList
+            };
+            res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+
             return res;
         }
 
@@ -314,54 +326,58 @@ namespace ProductManagementApplication.Controllers
             return res;
         }
 
-
+        /// <summary>
+        /// function which generates all the product ids based on the product descriptions and variations entered by user
+        /// </summary>
+        /// <param name="productData"></param>
+        /// <returns></returns>
         public ActionResult GenerateProductIds(string productData)
         {
             var res = new JsonResult();
-             JavaScriptSerializer jss = new JavaScriptSerializer();
-                ProductDTO jssProductData = jss.Deserialize<ProductDTO>((string)productData);
-                var productList = addRepo.GenerateProductIds(jssProductData);
+            JavaScriptSerializer jss = new JavaScriptSerializer();
+            ProductDTO jssProductData = jss.Deserialize<ProductDTO>((string)productData);
+            var productList = addRepo.GenerateProductIds(jssProductData);
 
-                res.MaxJsonLength = int.MaxValue;
-                res.Data = new
-                {
-                    productList
-                };
-                res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-           
-          
+            res.MaxJsonLength = int.MaxValue;
+            res.Data = new
+            {
+                productList
+            };
+            res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+
+
             return res;
-        
-    }
-         public ActionResult GetUOMCategories()
+
+        }
+        public ActionResult GetUOMCategories()
         {
             var res = new JsonResult();
-        
-                var uomList = addRepo.GetUOMCategories();
 
-                res.MaxJsonLength = int.MaxValue;
-                res.Data = new
-                {
-                    uomList
-                };
-                res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-          
+            var uomList = addRepo.GetUOMCategories();
+
+            res.MaxJsonLength = int.MaxValue;
+            res.Data = new
+            {
+                uomList
+            };
+            res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+
             return res;
         }
 
-        
-             public ActionResult GetUOMBases()
+
+        public ActionResult GetUOMBases()
         {
             var res = new JsonResult();
-             var uomList = addRepo.GetUOMBases();
+            var uomList = addRepo.GetUOMBases();
 
-                res.MaxJsonLength = int.MaxValue;
-                res.Data = new
-                {
-                    uomList
-                };
-                res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-          
+            res.MaxJsonLength = int.MaxValue;
+            res.Data = new
+            {
+                uomList
+            };
+            res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+
             return res;
         }
 
@@ -372,45 +388,18 @@ namespace ProductManagementApplication.Controllers
         {
             var res = new JsonResult();
             var result = "success";
-               addRepo.SaveNewSupplier(newSupplierName);
+            addRepo.SaveNewSupplier(newSupplierName);
 
-                res.MaxJsonLength = int.MaxValue;
-                res.Data = new
-                {
-                    result
-                };
-                res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-           
+            res.MaxJsonLength = int.MaxValue;
+            res.Data = new
+            {
+                result
+            };
+            res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+
             return res;
         }
 
-        //public ActionResult SaveNewClass(string newClassName , string newClassCode)
-        //{
-        //    var res = new JsonResult();
-        //    var result = "success";
-        //    try
-        //    {
-        //        addRepo.SaveNewClass(newClassName, newClassCode);
-
-        //        res.MaxJsonLength = int.MaxValue;
-        //        res.Data = new
-        //        {
-        //            result
-        //        };
-        //        res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        result = "error " + ex.Message;
-        //        res.MaxJsonLength = int.MaxValue;
-        //        res.Data = new
-        //        {
-        //            result
-        //        };
-        //        res.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-        //    }
-        //    return res;
-        //}
 
         public ActionResult SaveNewColor(string newColorName, string newColorCode)
         {
@@ -418,7 +407,7 @@ namespace ProductManagementApplication.Controllers
             var result = "Success";
             try
             {
-              result =  addRepo.SaveNewColor(newColorName, newColorCode);
+                result = addRepo.SaveNewColor(newColorName, newColorCode);
 
                 res.MaxJsonLength = int.MaxValue;
                 res.Data = new
@@ -446,7 +435,7 @@ namespace ProductManagementApplication.Controllers
             var result = "success";
             try
             {
-              result=  addRepo.SaveNewSize(newSizeName, newSizeCode, newSizeTitleId);
+                result = addRepo.SaveNewSize(newSizeName, newSizeCode, newSizeTitleId);
 
                 res.MaxJsonLength = int.MaxValue;
                 res.Data = new
@@ -474,7 +463,7 @@ namespace ProductManagementApplication.Controllers
             var result = "success";
             try
             {
-               result= addRepo.SaveNewOrientation(newOrientationName, newOrientationCode);
+                result = addRepo.SaveNewOrientation(newOrientationName, newOrientationCode);
 
                 res.MaxJsonLength = int.MaxValue;
                 res.Data = new
@@ -502,7 +491,7 @@ namespace ProductManagementApplication.Controllers
             var result = "success";
             try
             {
-              result=  addRepo.SaveNewFlavor(newFlavorName, newFlavorCode);
+                result = addRepo.SaveNewFlavor(newFlavorName, newFlavorCode);
 
                 res.MaxJsonLength = int.MaxValue;
                 res.Data = new
@@ -530,7 +519,7 @@ namespace ProductManagementApplication.Controllers
             var result = "success";
             try
             {
-               result= addRepo.SaveNewPackaging(newPackagingName, newPackagingCode);
+                result = addRepo.SaveNewPackaging(newPackagingName, newPackagingCode);
 
                 res.MaxJsonLength = int.MaxValue;
                 res.Data = new
@@ -558,7 +547,7 @@ namespace ProductManagementApplication.Controllers
             var result = "success";
             try
             {
-             result =   addRepo.SaveNewUOM(newUOMFactor, newUOMBase, newUOMCode);
+                result = addRepo.SaveNewUOM(newUOMFactor, newUOMBase, newUOMCode);
 
                 res.MaxJsonLength = int.MaxValue;
                 res.Data = new
@@ -586,7 +575,7 @@ namespace ProductManagementApplication.Controllers
             var result = "success";
             try
             {
-              result =  addRepo.SaveNewStrength(newStrengthName, newStrengthCode);
+                result = addRepo.SaveNewStrength(newStrengthName, newStrengthCode);
 
                 res.MaxJsonLength = int.MaxValue;
                 res.Data = new
@@ -635,6 +624,11 @@ namespace ProductManagementApplication.Controllers
             }
             return res;
         }
+        /// <summary>
+        /// function to enter products to db. these products wont be entered into system until they are approved by the manager
+        /// </summary>
+        /// <param name="productData"></param>
+        /// <returns></returns>
         public ActionResult SaveProducts(string productData)
         {
             var res = new JsonResult();
@@ -659,7 +653,11 @@ namespace ProductManagementApplication.Controllers
             return res;
 
         }
-
+        /// <summary>
+        /// function to save the mapping of the old item to the new created item
+        /// </summary>
+        /// <param name="productMatchList"></param>
+        /// <returns></returns>
         public ActionResult SaveItemMapping(string productMatchList)
         {
             var res = new JsonResult();
@@ -687,5 +685,5 @@ namespace ProductManagementApplication.Controllers
 
         #endregion SAVE
     }
-   
+
 }

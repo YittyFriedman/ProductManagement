@@ -134,185 +134,58 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountMateDemo.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AccountMateDemo.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccountMateDemo.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AccountMateDemo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccountMateDemo.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AccountMateDemo.edmx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Brand.cs">
-      <DependentUpon>ProductManagementDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ClassHierarchy.cs">
-      <DependentUpon>ProductManagementDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Color.cs">
-      <DependentUpon>ProductManagementDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AddController.cs" />
     <Compile Include="Controllers\ApproveController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Flavor.cs">
-      <DependentUpon>ProductManagementDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Gender.cs">
-      <DependentUpon>ProductManagementDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="icitem.cs">
-      <DependentUpon>AccountMateDemo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="icitem_map.cs">
-      <DependentUpon>AccountMateDemo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="iciwh.cs">
-      <DependentUpon>AccountMateDemo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ictype.cs">
-      <DependentUpon>AccountMateDemo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="icunit.cs">
-      <DependentUpon>AccountMateDemo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="icvend.cs">
-      <DependentUpon>AccountMateDemo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="icwhse.cs">
-      <DependentUpon>AccountMateDemo.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AddRepository.cs" />
     <Compile Include="Models\ApproveRepository.cs" />
     <Compile Include="Models\CustomAuthorization.cs" />
     <Compile Include="Models\DTO\DTORepository.cs" />
     <Compile Include="Models\DTO\MockDBTables.cs" />
+    <Compile Include="Models\DTO\SystemErrorLog.cs" />
     <Compile Include="Models\ErrorTracer.cs" />
+    <Compile Include="Models\DTO\Brand.cs" />
+    <Compile Include="Models\DTO\ClassHierarchy.cs" />
+    <Compile Include="Models\DTO\Color.cs" />
+    <Compile Include="Models\DTO\Flavor.cs" />
+    <Compile Include="Models\DTO\Gender.cs" />
+    <Compile Include="Models\DTO\icitem.cs" />
+    <Compile Include="Models\DTO\icitem_map.cs" />
+    <Compile Include="Models\DTO\iciwh.cs" />
+    <Compile Include="Models\DTO\ictype.cs" />
+    <Compile Include="Models\DTO\icunit.cs" />
+    <Compile Include="Models\DTO\icvend.cs" />
+    <Compile Include="Models\DTO\icwhse.cs" />
     <Compile Include="Models\MailRepository.cs" />
     <Compile Include="Models\ManageRepository.cs" />
-    <Compile Include="Orientation.cs">
-      <DependentUpon>ProductManagementDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Other.cs">
-      <DependentUpon>ProductManagementDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Packaging.cs">
-      <DependentUpon>ProductManagementDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Product.cs">
-      <DependentUpon>ProductManagementDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProductManagementDB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProductManagementDB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProductManagementDB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProductManagementDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProductManagementDB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProductManagementDB.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="ProductManagementSecurity.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProductManagementSecurity.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProductManagementSecurity.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProductManagementSecurity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProductManagementSecurity.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProductManagementSecurity.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="ProductMapping.cs">
-      <DependentUpon>ProductManagementDB.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\DTO\Orientation.cs" />
+    <Compile Include="Models\DTO\Other.cs" />
+    <Compile Include="Models\DTO\Packaging.cs" />
+    <Compile Include="Models\DTO\Product.cs" />
+    <Compile Include="Models\DTO\ProductClass.cs" />
+    <Compile Include="Models\DTO\ProductMapping.cs" />
+    <Compile Include="Models\DTO\RegisteredUser.cs" />
+    <Compile Include="Models\DTO\Size.cs" />
+    <Compile Include="Models\DTO\SizeTitle.cs" />
+    <Compile Include="Models\DTO\Strength.cs" />
+    <Compile Include="Models\DTO\Supplier.cs" />
+    <Compile Include="Models\DTO\UnitOfMeasure.cs" />
+    <Compile Include="Models\DTO\UnitOfMeasureCategory.cs" />
+    <Compile Include="Models\DTO\UOMBase.cs" />
+    <Compile Include="Models\DTO\User.cs" />
+    <Compile Include="Models\DTO\UserProfile.cs" />
+    <Compile Include="Models\DTO\Vendor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegisteredUser.cs">
-      <DependentUpon>ProductManagementSecurity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Size.cs">
-      <DependentUpon>ProductManagementDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SizeTitle.cs">
-      <DependentUpon>ProductManagementDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Strength.cs">
-      <DependentUpon>ProductManagementDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Supplier.cs">
-      <DependentUpon>ProductManagementDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>ProductManagementDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SystemErrorLog.cs">
-      <DependentUpon>ProductManagementDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UnitOfMeasure.cs">
-      <DependentUpon>ProductManagementDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UnitOfMeasureCategory.cs">
-      <DependentUpon>ProductManagementDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UOMBase.cs">
-      <DependentUpon>ProductManagementDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="User.cs">
-      <DependentUpon>ProductManagementSecurity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserProfile.cs">
-      <DependentUpon>ProductManagementSecurity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Vendor.cs">
-      <DependentUpon>ProductManagementDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="webpages_Membership.cs">
-      <DependentUpon>ProductManagementSecurity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="webpages_OAuthMembership.cs">
-      <DependentUpon>ProductManagementSecurity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="webpages_Roles.cs">
-      <DependentUpon>ProductManagementSecurity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="webpages_UsersInRoles.cs">
-      <DependentUpon>ProductManagementSecurity.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AccountMateDemo.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AccountMateDemo.edmx</DependentUpon>
-      <LastGenOutput>AccountMateDemo.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="AccountMateDemo.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AccountMateDemo.edmx</DependentUpon>
-      <LastGenOutput>AccountMateDemo.cs</LastGenOutput>
-    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -329,50 +202,9 @@
     <Content Include="Content\jquery-ui.css" />
     <Content Include="Images\edit icon.png" />
     <Content Include="Images\edit_icon_sm.png" />
-    <Content Include="ProductManagementSecurity.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProductManagementSecurity.edmx</DependentUpon>
-      <LastGenOutput>ProductManagementSecurity.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="ProductManagementSecurity.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProductManagementSecurity.edmx</DependentUpon>
-      <LastGenOutput>ProductManagementSecurity.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\jquery-ui.js" />
-    <Content Include="ProductManagementDB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ProductManagementDB.Context.cs</LastGenOutput>
-      <DependentUpon>ProductManagementDB.edmx</DependentUpon>
-    </Content>
-    <Content Include="ProductManagementDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProductManagementDB.edmx</DependentUpon>
-      <LastGenOutput>ProductManagementDB.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="ProductManagementDB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ProductManagementDB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="ProductManagementDB.edmx.diagram">
-      <DependentUpon>ProductManagementDB.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="AccountMateDemo.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AccountMateDemo.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="AccountMateDemo.edmx.diagram">
-      <DependentUpon>AccountMateDemo.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="ProductManagementSecurity.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ProductManagementSecurity.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="ProductManagementSecurity.edmx.diagram">
-      <DependentUpon>ProductManagementSecurity.edmx</DependentUpon>
-    </Content>
     <None Include="Properties\PublishProfiles\Demo Site.pubxml" />
     <None Include="Properties\PublishProfiles\Live Site.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
